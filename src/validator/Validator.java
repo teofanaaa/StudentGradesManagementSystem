@@ -1,7 +1,5 @@
 package validator;
 
-import repository.ValidationException;
-
 /**
  * Interfata Validator
  * @param <E>

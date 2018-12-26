@@ -1,4 +1,65 @@
 package domain;
 
-public class Utilizator {
+import java.io.Serializable;
+
+public class Utilizator implements Serializable, HasID<String> {
+    private String username;
+    private String hash;
+    private TipUtilizator tip;
+    private String nume;
+
+    public String getNume() {
+        return nume;
+    }
+
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
+
+    public enum TipUtilizator {
+        ADMIN, PROFESOR, STUDENT
+    }
+
+    @Override
+    public String getID() {
+        return username;
+    }
+
+    @Override
+    public void setID(String s) {
+        this.username=s;
+    }
+
+    public Utilizator(String username, String hash) {
+        this.username = username;
+        this.hash = hash;
+        this.tip = TipUtilizator.ADMIN;
+    }
+
+    public Utilizator(String username, String hash, TipUtilizator type) {
+        this.username = username;
+        this.hash = hash;
+        this.tip = type;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public TipUtilizator getTip() {
+        return tip;
+    }
+
+    public void setTip(TipUtilizator tip) {
+        this.tip = tip;
+    }
+
+    @Override
+    public String toString() {
+        return username + "/" + hash + "/" + tip;
+    }
 }

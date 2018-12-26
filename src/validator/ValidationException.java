@@ -1,4 +1,4 @@
-package repository;
+package validator;
 
 /**
  * Clasa ValidationException

@@ -1,7 +1,6 @@
 package validator;
 
 import domain.Tema;
-import repository.ValidationException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,9 +27,8 @@ public class ValidatorTema implements Validator<Tema> {
      * @param data - numar intreg >0
      * @throws ValidationException daca data nu e valida
      */
-    private void validateDate(Integer data){
-        String dataS=data.toString();
-        Matcher mtch = datePtrn.matcher(dataS);
+    private void validateDate(String data){
+        Matcher mtch = datePtrn.matcher(data);
         if(!mtch.matches()){
             throw new ValidationException("Data incorecta!");
         }
@@ -41,8 +39,8 @@ public class ValidatorTema implements Validator<Tema> {
      * @param predare (data de primire a temei)
      * @param deadline (data limita de predare a temei)
      */
-    private void validateInterval(Integer predare,Integer deadline){
-        if(predare>deadline)
+    private void validateInterval(String predare,String deadline){
+        if(Integer.parseInt(predare)>Integer.parseInt(deadline))
             throw  new ValidationException("Date incorecte!");
     }
 

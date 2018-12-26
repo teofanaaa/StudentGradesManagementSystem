@@ -1,7 +1,6 @@
 package validator;
 
 import domain.Student;
-import repository.ValidationException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -72,6 +71,7 @@ public class ValidatorStudent implements Validator<Student> {
     public void validate(Student entity)  {
         validateID(entity.getID());
         validateName(entity.getNume());
+        validateName(entity.getPrenume());
         validateGrupa(entity.getGrupa());
         validateEmail(entity.getEmail());
         validateName(entity.getIndrumatorLab());
