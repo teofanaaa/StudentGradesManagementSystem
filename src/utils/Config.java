@@ -13,6 +13,9 @@ public class Config {
     private static String usernameAdmin = "proiect.map.teo@gmail.com";
     private static String passwordAdmin = "admin@catalog";
     public static String pathRezultate="./src/data/results/" ;
+    public static String pathDatabase="./src/data/" ;
+    public static String pathRaport="./src/data/raport" ;
+
 
     public static <E> List<E> filterAndSorter(List<E> lista, Predicate<E> p, Comparator<E> c) {
         if (lista == null || lista.isEmpty()) {
@@ -97,5 +100,8 @@ public class Config {
             }
       //  }).start();
     }
+
+
+
 
 }

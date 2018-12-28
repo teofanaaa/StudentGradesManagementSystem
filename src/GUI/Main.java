@@ -13,7 +13,10 @@ import service.*;
 import utils.PasswordStorage;
 import validator.*;
 
+import java.io.File;
+
 import static java.lang.System.exit;
+import static java.lang.System.setOut;
 
 public class Main extends Application {
 
@@ -41,6 +44,14 @@ public class Main extends Application {
         StudentService studentService=new StudentService(repoS,repoT,repoN,utilizatorService);
         TemaService temaService=new TemaService(repoT,repoS);
 
+        Rapoarte rapoarte=new Rapoarte(studentService,temaService,noteService);
+        try {
+            rapoarte.generateReport(new File("./src/data/raport/complet.pdf"),
+                    "Toate grupele",false,false,false,false);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
 
 
         //launch(args);

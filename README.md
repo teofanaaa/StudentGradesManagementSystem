@@ -21,3 +21,5 @@ Useful links:
 * https://www.tutorialspoint.com/java/java_sending_email.htm
 * https://www.mkyong.com/java/javamail-api-sending-email-via-gmail-smtp-example/
 * https://www.youtube.com/watch?v=yvI9HTP54gI
+* https://jar-download.com/artifacts/com.itextpdf/html2pdf/2.0.0/source-code
+* https://developers.itextpdf.com/content/itext-7-jump-start-tutorial/installing-itext-7

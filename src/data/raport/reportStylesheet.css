@@ -1,0 +1,82 @@
+body {
+    margin:0;
+    padding:0;
+    background: whitesmoke;
+}
+
+h1 {
+    font-size: 35pt;
+    text-align: center;
+    font-family: 'Bebas Neue Bold', sans-serif;
+    color: #3a1311;
+    margin:0;
+    padding:0;
+}
+
+hr {
+    margin: 15px 0;
+}
+
+table {
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+
+td {
+    padding:0;
+}
+
+p {
+	padding:0;
+	margin: 10px 30px;
+}
+
+.Card {
+    background: #fff;
+    border-radius: 2px;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.DataTable {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+}
+
+.DataTable td, .DataTable th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px 20px;
+}
+
+.DataTable tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.DataColumn {
+	background-color: #2c2c2c;
+    color: white;
+	font-family: 'Bebas Neue Bold', sans-serif;
+	font-size: 20pt;
+    padding:10px 0;
+}
+
+.LeftColumn {
+    text-align: right;
+}
+
+.RightColumn {
+    text-align: left;
+}
+
+.UpColumn p {
+    text-align: center;
+    padding:10px;
+}
+
+img {
+    width: 540px;
+    display: block;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}

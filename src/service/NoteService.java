@@ -226,12 +226,32 @@ public class NoteService extends AbstractService<Pair<String,String>, Nota> {
         return suma / 14;
     }
 
+    private Integer nrStudentiGrupa(String grupa){
+        return getAll()
+                .stream()
+                .filter(nota -> repoS.findOne(Optional.of(nota.getStudentID())).get().getGrupa().equals(grupa))
+                .collect(Collectors.toList())
+                .size();
+    }
+
+    public double getMedieGrupa(String grupa){
+        double suma = 0;
+        int pondere=1;
+        Tema tema;
+        for ( Nota nota : listaNoteGrupa(grupa)) {
+            tema=repoT.findOne(Optional.of(nota.getTemaID())).get();
+            pondere=Integer.parseInt(tema.getDeadline())-Integer.parseInt(tema.getDataPredare());
+            suma =suma+ Double.parseDouble(nota.getNotaProf())*pondere;
+        }
+        return suma / (14*nrStudentiGrupa(grupa));
+    }
+
     public void notareDinOficiu(){
         repoS.findAll().forEach(student->{
             repoT.findAll().forEach(tema->{
                 Nota nota=find(new Pair<>(student.getID(),tema.getID()));
                 int deadline=Integer.parseInt(tema.getDeadline());
-                if(nota==null && deadline<getWeekUni()-2) {
+                if(nota==null && getWeekUni()==null) {
                     Nota toAdd=new Nota(student.getID(), tema.getID(), getWeekUni().toString(), "1");
                     add(toAdd);
                     adaugaInFile(toAdd,"Tema nu a fost predata. ",Action.ADD);
