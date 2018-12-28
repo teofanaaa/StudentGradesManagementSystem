@@ -18,6 +18,7 @@ public final class DatabaseCreator {
         createTable("Teme",temeTable());
         createTable("Note",noteTable());
         createTable("Utilizatori",utilizatoriTable());
+        createTable("Profesori", profesoriTable());
         //shutdown();
     }
 
@@ -36,6 +37,14 @@ public final class DatabaseCreator {
         }
     }
 
+    private String profesoriTable(){
+        return "CREATE TABLE PROFESORI (" +
+                " id VARCHAR(10) primary key," +
+                " nume VARCHAR(100)," +
+                " email VARCHAR(200)" +
+                ")";
+    }
+
     private String studentiTable(){
         return "CREATE TABLE STUDENTI (" +
                 " id VARCHAR(7) primary key," +
@@ -43,7 +52,7 @@ public final class DatabaseCreator {
                 " prenume VARCHAR(100)," +
                 " grupa VARCHAR(3)," +
                 " email VARCHAR(200)," +
-                " indrumatorLab VARCHAR(200)" +
+                " indrumatorLab VARCHAR(10) foreign key references PROFESORI (id)" +
                 ")";
     }
 

@@ -1,0 +1,5 @@
+clau/Claudia/STUDENT/Claudia
+patricia/Patricia/STUDENT/Vlad
+maria/Maria/STUDENT/Maria
+andrei/Andrei/STUDENT/Andrei
+vlad/Vlad/STUDENT/Vlad

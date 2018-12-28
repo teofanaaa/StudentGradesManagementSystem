@@ -14,7 +14,14 @@ public class ValidatorStudent implements Validator<Student> {
     private static Pattern usrIdPtrn = Pattern.compile("^[1-9][0-9]{1,}$");
     private static Pattern usrGrupaPtrn = Pattern.compile("^[1-9]{3}$");
     private static Pattern usrEmailPtrn = Pattern.compile("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$");
+    private static Pattern usrIdProfPtrn = Pattern.compile("^[1-9]{1,}[0-9]*$");
 
+    private static void validateIdProf(String id){
+        Matcher mtch = usrIdProfPtrn.matcher(id);
+        if(!mtch.matches()){
+            throw new ValidationException("Id profesor incorect!");
+        }
+    }
     /**
      * Validarea numelui studentului
      * @param name - String (contine litere mari/mici si caracterele speciale: ,.'-)
@@ -74,6 +81,6 @@ public class ValidatorStudent implements Validator<Student> {
         validateName(entity.getPrenume());
         validateGrupa(entity.getGrupa());
         validateEmail(entity.getEmail());
-        validateName(entity.getIndrumatorLab());
+        validateIdProf(entity.getIndrumatorLab());
     }
 }

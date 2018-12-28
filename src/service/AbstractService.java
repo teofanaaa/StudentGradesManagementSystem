@@ -52,6 +52,7 @@ public class AbstractService<ID , E extends HasID<ID>>  implements Service<ID,E>
     public void removeAll() {
         for(E entity: repository.findAll()){
             repository.delete(Optional.of(entity.getID()));
+            notifyObservers(new DataChanged(EventType.DELETE));
         }
     }
 

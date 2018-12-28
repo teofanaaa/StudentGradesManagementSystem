@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class StudentTest {
 
     private Student student=new Student("2200","Enachioiu",
-            "Teofana","223","teo@yahoo.com","Guran A");
+            "Teofana","223","teo@yahoo.com","1");
 
     @Test
     void getNume() {
@@ -56,13 +56,13 @@ class StudentTest {
 
     @Test
     void getIndrumatorLab() {
-        assertEquals("Guran A",student.getIndrumatorLab());
+        assertEquals("1",student.getIndrumatorLab());
     }
 
     @Test
     void setIndrumatorLab() {
-        student.setIndrumatorLab("Guran Adriana");
-        assertEquals("Guran Adriana",student.getIndrumatorLab());
+        student.setIndrumatorLab("2");
+        assertEquals("2",student.getIndrumatorLab());
     }
 
     @Test
@@ -78,15 +78,15 @@ class StudentTest {
 
     @Test
     void toStringTest() {
-        assertEquals("2200/Enachioiu/Teofana/223/teo@yahoo.com/Guran A",student.toString());
+        assertEquals("2200/Enachioiu/Teofana/223/teo@yahoo.com/1",student.toString());
     }
 
     @Test
     void equals() {
         Student s1=new Student("2200","Enachioiu",
-                "Teofana","223","teo@yahoo.com","Guran A");
+                "Teofana","223","teo@yahoo.com","1");
         Student s2=new Student("2200","Enachioiu",
-                "Teofana","223","teo@yahoo.com","Guran A");
+                "Teofana","223","teo@yahoo.com","1");
         assertEquals(s1, s2);
         s1.setID("2222");
         assertNotEquals(s1, s2);

@@ -30,16 +30,18 @@ public class Utilizator implements Serializable, HasID<String> {
         this.username=s;
     }
 
-    public Utilizator(String username, String hash) {
+    public Utilizator(String username, String hash, String nume) {
         this.username = username;
         this.hash = hash;
         this.tip = TipUtilizator.ADMIN;
+        this.nume = nume;
     }
 
-    public Utilizator(String username, String hash, TipUtilizator type) {
+    public Utilizator(String username, String hash, TipUtilizator type,String nume) {
         this.username = username;
         this.hash = hash;
         this.tip = type;
+        this.nume=nume;
     }
 
     public String getHash() {
@@ -60,6 +62,6 @@ public class Utilizator implements Serializable, HasID<String> {
 
     @Override
     public String toString() {
-        return username + "/" + hash + "/" + tip;
+        return username + "/" + hash + "/" + tip+"/"+nume;
     }
 }

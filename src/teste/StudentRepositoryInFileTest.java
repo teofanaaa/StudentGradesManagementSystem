@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StudentRepositoryInFileTest {
     private Repository<String, Student> repo=new StudentRepositoryInFile("./src/teste/Studenti_test.txt", new ValidatorStudent());
-    private Student s1=new Student("9999","Pop","Claudia","223","clau@yahoo.com","A Guran");
-    private Student s2=new Student("1001","Pop","Elena","223","ela@yahoo.com","A Guran");
+    private Student s1=new Student("9999","Pop","Claudia","223","clau@yahoo.com","1");
+    private Student s2=new Student("1001","Pop","Elena","223","ela@yahoo.com","1");
 
     @Test
     void save() {
@@ -73,7 +73,7 @@ class StudentRepositoryInFileTest {
         }
         repo.save(Optional.of(s1));
         assertEquals(Optional.empty(),repo.update(Optional.of(s1)));
-        Student s3=new Student("1011","Pop","Elena","223","ela@yahoo.com","A Guran");
+        Student s3=new Student("1011","Pop","Elena","223","ela@yahoo.com","1");
 
         assertEquals(Optional.of(s3),repo.update(Optional.of(s3)));
     }

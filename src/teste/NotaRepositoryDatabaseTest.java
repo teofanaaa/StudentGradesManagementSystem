@@ -22,7 +22,7 @@ class NotaRepositoryDatabaseTest {
     private Repository<Pair<String, String>, Nota> repo=new NotaRepositoryDatabase(creator);
 
     private Student student=new Student("1001","Enachioiu", "Teofana",
-            "223","teo@yahoo.com","Guran A");
+            "223","teo@yahoo.com","1");
     private Tema tema1= new Tema("4","Lab 4", "5","4");
     private Tema tema2= new Tema("5","Lab 5", "6","5");
 
