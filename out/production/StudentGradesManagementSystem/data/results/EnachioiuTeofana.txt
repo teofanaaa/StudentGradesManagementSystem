@@ -5,12 +5,19 @@ Tema: 1
 Nota: 10
 Predata in saptamana: 1
 Deadline: 2
-Feedback: Nu s-au aplicat penalizari. Foarte bine lucrat!
+Feedback: Nu s-au aplicat penalizari. Foarte bine!
 
-> S-a modificat o nota existenta!
+> S-a adaugat o nota noua!
 Tema: 1
-Nota: 9
+Nota: 10
 Predata in saptamana: 1
 Deadline: 2
-Feedback: Nu s-au aplicat penalizari. Remediere nota
+Feedback: Nu s-au aplicat penalizari. Foarte bine!
+
+> S-a adaugat o nota noua!
+Tema: 1
+Nota: 10
+Predata in saptamana: 1
+Deadline: 2
+Feedback: Nu s-au aplicat penalizari. Foarte bine!
 

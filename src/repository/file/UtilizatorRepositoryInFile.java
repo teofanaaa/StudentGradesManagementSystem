@@ -18,6 +18,11 @@ public class UtilizatorRepositoryInFile extends AbstractRepositoryInFile<String,
     public Utilizator extractEntity(String line) {
         String[] parts=line.split("/");
         int size=parts.length;
-        return new Utilizator(parts[0],parts[1], Utilizator.TipUtilizator.valueOf(parts[size-2]),parts[size-1]);
+        String hash="";
+        for(int i=1;i<size-2;i++){
+            hash=hash+parts[i]+"/";
+        }
+        String hashBun=hash.substring(0,hash.length()-1);
+        return new Utilizator(parts[0],hashBun, Utilizator.TipUtilizator.valueOf(parts[size-2]),parts[size-1]);
     }
 }

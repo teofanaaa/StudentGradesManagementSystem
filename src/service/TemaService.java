@@ -1,55 +1,131 @@
 package service;
 
+import domain.Nota;
 import domain.Student;
 import domain.Tema;
+import javafx.util.Pair;
 import repository.Repository;
 import utils.DataChanged;
+import utils.EventType;
+import utils.GUIUtils;
 import utils.Observable;
 import validator.ValidationException;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 import static utils.Config.filterAndSorter;
 
 
 public class TemaService extends AbstractService<String, Tema> {
     Repository<String, Student> repoS;
+    Repository<Pair<String,String>, Nota> repoN;
 
-    public TemaService(Repository<String, Tema> repository,Repository<String, Student> repoS) {
+    public TemaService(Repository<String, Tema> repository,Repository<String, Student> repoS,Repository<Pair<String,String>, Nota> repoN) {
         super(repository);
         this.repoS=repoS;
+        this.repoN=repoN;
     }
 
 
     public Tema modificareDeadline(String id, String deadlineVechiString, String deadlineNouString) throws ValidationException{
+        if(utils.Config.getWeekUni()==null)throw new ValidationException("Nu se mai pot modifica deadline-urile!");
         Tema tema=find(id);
-        if(tema!=null){
-            int deadlineVechi=Integer.parseInt(deadlineVechiString);
-            if(deadlineVechi<utils.Config.getCurrentWeek()){
-                throw new ValidationException("S-a depasit deadline-ul vechi!");
-            }
+        Tema returned=tema;
+        try {
+            if(tema!=null) {
+                int deadlineVechi = Integer.parseInt(deadlineVechiString);
+                if (deadlineVechi < utils.Config.getWeekUni())
+                    throw new ValidationException("S-a depasit deadline-ul vechi!");
 
-            int dataPredare=Integer.parseInt(tema.getDataPredare());
-            int deadline=Integer.parseInt(tema.getDeadline());
-            if(dataPredare>deadline) {
-                throw new ValidationException("Deadline-ul e mai mic fata de data de predare a temei!");
-            }
-            tema.setDeadline(deadlineNouString);
+                if(Integer.parseInt(deadlineNouString)<utils.Config.getWeekUni())
+                    throw new ValidationException("Nu ma pot intoarece in timp...");
 
+                int dataPredare = Integer.parseInt(tema.getDataPredare());
+                int deadline = Integer.parseInt(tema.getDeadline());
+                if (dataPredare > deadline) {
+                    throw new ValidationException("Deadline-ul e mai mic fata de data de predare a temei!");
+                }
+                tema.setDeadline(deadlineNouString);
+            }
+            returned=update(tema);
+            if (returned == null) notifyObservers(new DataChanged(EventType.UPDATE));
         }
-        return update(tema);
+        catch (ValidationException e){
+            GUIUtils.showErrorMessage(e.getMessage());
+        }
+        return returned;
+    }
+
+    public boolean modificDeadline(Tema tema, String deadlineVechiString, String deadlineNouString) throws ValidationException{
+        boolean modific=false;
+        if(utils.Config.getWeekUni()==null)throw new ValidationException("Nu se mai pot modifica deadline-urile!");
+        try {
+                if (Integer.parseInt(deadlineVechiString) < utils.Config.getWeekUni())
+                    throw new ValidationException("S-a depasit deadline-ul vechi!");
+                if(Integer.parseInt(deadlineNouString)<utils.Config.getWeekUni())
+                    throw new ValidationException("Nu ma pot intoarece in timp...");
+                int dataPredare = Integer.parseInt(tema.getDataPredare());
+                int deadline = Integer.parseInt(tema.getDeadline());
+                if (dataPredare > deadline)
+                    throw new ValidationException("Deadline-ul e mai mic fata de data de predare a temei!");
+                tema.setDeadline(deadlineNouString);
+                modific=true;
+        }
+        catch (ValidationException e){
+            GUIUtils.showErrorMessage(e.getMessage());
+        }
+        return modific;
+    }
+
+    @Override
+    public Tema add(Tema entity) throws ValidationException {
+        Tema returned=entity;
+        try{
+            returned=super.add(entity);
+            if(returned!=null)
+                GUIUtils.showErrorMessage("ID existent!");
+            else notifyObservers(new DataChanged(EventType.ADD));
+        }
+        catch (ValidationException e){
+            GUIUtils.showErrorMessage(e.getMessage());
+        }
+        return returned;
+    }
+
+    @Override
+    public Tema remove(String s) {
+        Tema returned=super.remove(s);
+        if(returned!=null){
+            stergeNote(s);
+            notifyObservers(new DataChanged(EventType.DELETE));
+        }
+        return returned;
+    }
+
+    @Override
+    public void removeAll() {
+        super.removeAll();
+        notifyObservers(new DataChanged(EventType.DELETE));
     }
 
     @Override
     public Tema update(Tema entity) throws ValidationException {
         Tema tema=find(entity.getID());
+        boolean modific=false;
         if(tema!=null){
             if(entity.getDeadline().equals("")) entity.setDeadline(tema.getDeadline());
             if(entity.getDescriere().equals("")) entity.setDescriere(tema.getDescriere());
+            if(!tema.getDeadline().equals(entity.getDeadline())) {
+                modific=modificDeadline(entity, tema.getDeadline(), entity.getDeadline());
+            }
             if(entity.getDataPredare().equals("")) entity.setDataPredare(tema.getDataPredare());
         }
-        return super.update(entity);
+        Tema returned=entity;
+        if(modific) returned=super.update(entity);
+        notifyObservers(new DataChanged(EventType.UPDATE));
+        return returned;
     }
 
     public List<Tema> filtreazaTemaDeadline(String deadline) {
@@ -67,6 +143,13 @@ public class TemaService extends AbstractService<String, Tema> {
                 Comparator.comparing(Tema::getID));
     }
 
+    private void stergeNote(String idTema){
+        for(Student student:repoS.findAll()){
+            Pair<String, String> id=new Pair(student.getID(),idTema);
+            if(repoN.findOne(Optional.ofNullable(id)).isPresent())
+                repoN.delete(Optional.of(id));
+        }
+    }
 
 
 }

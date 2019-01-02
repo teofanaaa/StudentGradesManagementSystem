@@ -1,9 +1,0 @@
-Situatia studentului Pop Maria la disciplina MAP
-
-> S-a adaugat o nota noua!
-Tema: 1
-Nota: 1
-Predata in saptamana: 1
-Deadline: 2
-Feedback: S-a acordat nota din oficiu! Tema nu a fost predata la timp. Mai bine nu
-

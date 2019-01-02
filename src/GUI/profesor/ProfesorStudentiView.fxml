@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handlePane" prefHeight="375.0" prefWidth="675.0" stylesheets="@../../resources/styleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.profesor.ProfesorStudentiController">
+   <children>
+      <AnchorPane fx:id="secondHeader" layoutX="6.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="subtitle" alignment="CENTER" contentDisplay="CENTER" layoutX="324.0" layoutY="17.0" text="TEME" textFill="WHITE" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableView" layoutX="49.0" layoutY="88.0" onMouseClicked="#handleTable" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="120.0">
+        <columns>
+          <TableColumn fx:id="ColumnId" prefWidth="70.0" text="Nr. matr." />
+          <TableColumn fx:id="ColumnNume" prefWidth="120.0" text="Nume" />
+            <TableColumn fx:id="ColumnPrenume" prefWidth="120.0" text="Prenume" />
+            <TableColumn fx:id="ColumnGrupa" text="Grupa" />
+            <TableColumn fx:id="ColumnEmail" prefWidth="180.0" text="Email" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="pagination" layoutX="50.0" layoutY="305.0" prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="275.0" AnchorPane.topAnchor="305.0" />
+      <JFXTextField fx:id="searchBar" layoutX="50.0" layoutY="71.0" onAction="#handleSearch" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" onKeyTyped="#handleSearch" promptText="Search" AnchorPane.bottomAnchor="270.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="80.0" />
+      <JFXButton fx:id="notaButton" layoutX="511.0" layoutY="78.0" onAction="#handleNoteaza" prefHeight="30.0" prefWidth="114.0" stylesheets="@../../resources/styleSheet.css" text="Noteaza" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="78.0">
+         <graphic>
+            <ImageView fitHeight="10.0" fitWidth="10.0" opacity="0.7">
+               <image>
+                  <Image url="@../../resources/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

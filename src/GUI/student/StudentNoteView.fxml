@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="675.0" stylesheets="@../../resources/styleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.student.StudentNoteController">
+   <children>
+      <AnchorPane fx:id="secondHeader" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="subtitle" layoutX="324.0" layoutY="17.0" text="NOTE" AnchorPane.leftAnchor="580.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableView" layoutX="44.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="80.0">
+        <columns>
+          <TableColumn fx:id="ColumnIdTema" prefWidth="75.0" text="Laborator" />
+          <TableColumn fx:id="ColumnNota" prefWidth="75.0" text="Nota" />
+            <TableColumn fx:id="ColumnData" prefWidth="75.0" text="Data" />
+        </columns>
+      </TableView>
+      <GridPane fx:id="gridMedia" layoutX="307.0" layoutY="80.0" prefHeight="30.0" prefWidth="174.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="52.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="122.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="nota" text="nota" GridPane.columnIndex="1" />
+            <Label text="Media:" />
+         </children>
+      </GridPane>
+      <BarChart fx:id="chartStudent" layoutX="307.0" layoutY="125.0" prefHeight="200.0" prefWidth="300.0" title="Medii studenti" AnchorPane.bottomAnchor="50.0">
+        <xAxis>
+          <CategoryAxis endMargin="10.0" label="Medie" prefWidth="223.0" side="BOTTOM" startMargin="0.0" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Numar Studenti" side="LEFT" tickLabelGap="0.0" upperBound="10.0" />
+        </yAxis>
+      </BarChart>
+      <Line endX="-8.0" layoutX="408.0" layoutY="110.0" startX="-108.0" strokeWidth="0.1" />
+   </children>
+</AnchorPane>

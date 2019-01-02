@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.admin.AdminUsersController">
+   <children>
+      <AnchorPane fx:id="secondHeader" layoutX="6.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="subtitle" alignment="CENTER" contentDisplay="CENTER" layoutX="324.0" layoutY="17.0" text="USERS" textFill="WHITE" AnchorPane.leftAnchor="580.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableView" layoutX="144.0" layoutY="112.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
+        <columns>
+          <TableColumn fx:id="ColumnUsername" prefWidth="190.0" text="Username" />
+            <TableColumn fx:id="ColumnNume" prefWidth="190.0" text="Nume" />
+            <TableColumn fx:id="ColumnTip" prefWidth="190.0" text="Tip utilizator" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="pagination" layoutX="238.0" layoutY="311.0" prefHeight="50.0" prefWidth="200.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="50.0" />
+   </children>
+</AnchorPane>

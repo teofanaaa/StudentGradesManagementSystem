@@ -4,6 +4,7 @@ import domain.Profesor;
 import domain.Student;
 import domain.Utilizator;
 import repository.Repository;
+import utils.Config;
 import utils.DataChanged;
 import utils.Observer;
 import utils.PasswordStorage;
@@ -55,21 +56,24 @@ public class UtilizatorService extends AbstractService<String, Utilizator>{
         return add(new Utilizator(username, hash, Utilizator.TipUtilizator.ADMIN,nume));
     }
 
-    public boolean verificareParola(String username, String password)
-            throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
+    public boolean verificareParola(String username, String password) {
         Utilizator user = find(username);
 
         if (user!=null) {
             String userHash = user.getHash();
-            return verifyPassword(password, userHash);
+            try {
+                return PasswordStorage.verifyPassword(password, userHash);
+            } catch (PasswordStorage.CannotPerformOperationException e) {
+                e.printStackTrace();
+            } catch (PasswordStorage.InvalidHashException e) {
+                e.printStackTrace();
+            }
         }
-        else
-            return false;
+        return false;
     }
 
     public void modificareParola(String user, String oldPassword, String newPassword, String newPasswordRetype)
-            throws ValidationException, PasswordStorage.InvalidHashException,
-            PasswordStorage.CannotPerformOperationException {
+            {
 
         Utilizator userFound = find(user);
         if (userFound==null)
@@ -80,10 +84,16 @@ public class UtilizatorService extends AbstractService<String, Utilizator>{
             msg += "Parola trebuie sa contina cel putin 5 caractere. ";
         if (! newPassword.equals(newPasswordRetype))
             msg += "Parolele nu coincid. ";
-        if (! verifyPassword(user, oldPassword)) {
-            msg += "Parola veche nu este corecta. ";
-        }
-        if (! msg.equals(""))
+                try {
+                    if (! verifyPassword(user, oldPassword)) {
+                        msg += "Parola veche nu este corecta. ";
+                    }
+                } catch (PasswordStorage.CannotPerformOperationException e) {
+                    e.printStackTrace();
+                } catch (PasswordStorage.InvalidHashException e) {
+                    e.printStackTrace();
+                }
+                if (! msg.equals(""))
             throw new ValidationException(msg);
 
         String hash = null;

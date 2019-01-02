@@ -14,11 +14,12 @@ public final class DatabaseCreator {
 
     public DatabaseCreator(String locatie) {
         createConnection(locatie);
+        createTable("Profesori", profesoriTable());
         createTable("Studenti",studentiTable());
         createTable("Teme",temeTable());
         createTable("Note",noteTable());
         createTable("Utilizatori",utilizatoriTable());
-        createTable("Profesori", profesoriTable());
+
         //shutdown();
     }
 
@@ -52,7 +53,9 @@ public final class DatabaseCreator {
                 " prenume VARCHAR(100)," +
                 " grupa VARCHAR(3)," +
                 " email VARCHAR(200)," +
-                " indrumatorLab VARCHAR(10) foreign key references PROFESORI (id)" +
+                " indrumatorLab VARCHAR(10)," +
+                " CONSTRAINT prof_FK FOREIGN KEY (indrumatorLab)" +
+                " REFERENCES PROFESORI (id)" +
                 ")";
     }
 
@@ -67,13 +70,20 @@ public final class DatabaseCreator {
 
     private String noteTable(){
         return "CREATE TABLE NOTE (" +
-                " studentID VARCHAR(7)," +
-                " CONSTRAINT FK_Std foreign key (studentID) references STUDENTI (id), " +
-                " temaID VARCHAR(4), " +
-                " CONSTRAINT FK_Teme foreign key (temaID) references TEME (id), " +
-                " dataCurenta VARCHAR(2), " +
-                " notaProf VARCHAR(8)," +
-                "CONSTRAINT PK_Note primary key (studentID, temaID)"+
+                " studentID VARCHAR(7) not null,\n" +
+                " temaID VARCHAR(4) not null,\n" +
+                " dataCurenta VARCHAR(2),\n" +
+                " notaProf VARCHAR(8),\n" +
+
+                " CONSTRAINT NOTE_PK PRIMARY KEY (studentID, temaID), \n" +
+
+                " CONSTRAINT STD_FK\n" +
+                " FOREIGN KEY (studentID)\n" +
+                " REFERENCES STUDENTI (id)," +
+
+                " CONSTRAINT TEME_FK\n" +
+                " FOREIGN KEY (temaID)\n" +
+                " REFERENCES  TEME(id)"+
                 ")";
     }
 

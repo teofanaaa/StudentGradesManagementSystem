@@ -22,4 +22,8 @@ Useful links:
 * https://www.mkyong.com/java/javamail-api-sending-email-via-gmail-smtp-example/
 * https://www.youtube.com/watch?v=yvI9HTP54gI
 * https://jar-download.com/artifacts/com.itextpdf/html2pdf/2.0.0/source-code
+* https://www.flaticon.com/
+* https://www.youtube.com/watch?v=yvI9HTP54gI
+* https://github.com/jfoenixadmin/JFoenix
 * https://developers.itextpdf.com/content/itext-7-jump-start-tutorial/installing-itext-7
+* http://incepttechnologies.blogspot.com/p/javafx-tableview-with-pagination-and.html

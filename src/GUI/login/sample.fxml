@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="root" stylesheets="@../../resources/login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.login.Controller">
+   <children>
+      <StackPane fx:id="stackPane" layoutX="231.0" layoutY="172.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="85.0">
+         <children>
+            <AnchorPane fx:id="loginPane" prefHeight="227.0" prefWidth="200.0" stylesheets="@../../resources/login.css" StackPane.alignment="TOP_LEFT">
+               <children>
+                  <JFXTextField fx:id="fieldUser" layoutX="42.0" layoutY="68.0" promptText="User" styleClass="jfx-text-field" stylesheets="@../../resources/login.css" AnchorPane.bottomAnchor="145.0" AnchorPane.rightAnchor="25.0" />
+                  <JFXPasswordField fx:id="fieldPassword" layoutX="33.0" layoutY="108.0" onAction="#handleLogin" promptText="Password" styleClass="jfx-password-field" stylesheets="@../../resources/login.css" AnchorPane.bottomAnchor="105.0" AnchorPane.rightAnchor="25.0" />
+                  <JFXButton layoutX="63.0" layoutY="187.0" onAction="#handleLogin" styleClass="jfx-button" stylesheets="@../../resources/login.css" text="Log in" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" />
+                  <ImageView fx:id="login" fitHeight="60.0" fitWidth="60.0" layoutX="75.0" layoutY="18.0" style="-fx-opacity: 0.7;" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="30.0">
+                     <image>
+                        <Image url="@../../resources/lock.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="4.0" layoutY="71.0" style="-fx-opacity: 0.7;" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="15.0">
+                     <image>
+                        <Image url="@../../resources/man-user.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="-11.0" layoutY="108.0" style="-fx-opacity: 0.7;" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="15.0">
+                     <image>
+                        <Image url="@../../resources/vintage-key-outline.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="errorLabel" layoutX="147.0" layoutY="221.0" text="Date incorecte!" visible="false" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="25.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

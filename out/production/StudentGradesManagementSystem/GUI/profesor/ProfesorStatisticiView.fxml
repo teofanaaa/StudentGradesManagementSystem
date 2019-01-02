@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.profesor.ProfesorStatisticiController">
+   <children>
+      <AnchorPane fx:id="secondHeader" layoutX="6.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="subtitle" alignment="CENTER" contentDisplay="CENTER" layoutX="552.0" layoutY="17.0" prefHeight="21.0" prefWidth="93.0" text="STATISTICI" textFill="WHITE" AnchorPane.leftAnchor="552.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0" />
+         </children>
+      </AnchorPane>
+      <BarChart fx:id="chartStudent" layoutX="38.0" layoutY="100.0" prefHeight="200.0" prefWidth="300.0" title="Medii studenti" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="30.0">
+         <xAxis>
+            <CategoryAxis endMargin="10.0" label="Medie" prefWidth="223.0" side="BOTTOM" startMargin="0.0" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis label="Numar Studenti" side="LEFT" tickLabelGap="0.0" upperBound="10.0" />
+         </yAxis>
+      </BarChart>
+      <BarChart fx:id="chartTema" layoutX="330.0" layoutY="108.0" prefHeight="200.0" prefWidth="300.0" title="Medii laborator" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="30.0">
+         <xAxis>
+            <CategoryAxis endMargin="10.0" label="Laborator" prefWidth="223.0" side="BOTTOM" startMargin="0.0" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis label="Medie" side="LEFT" tickLabelGap="0.0" upperBound="10.0" />
+         </yAxis>
+      </BarChart>
+      </children>
+</AnchorPane>

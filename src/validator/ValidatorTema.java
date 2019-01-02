@@ -41,7 +41,7 @@ public class ValidatorTema implements Validator<Tema> {
      */
     private void validateInterval(String predare,String deadline){
         if(Integer.parseInt(predare)>Integer.parseInt(deadline))
-            throw  new ValidationException("Date incorecte!");
+            throw  new ValidationException("Deadline-ul nu poate fi mai mic ca data predarii!");
     }
 
     /**

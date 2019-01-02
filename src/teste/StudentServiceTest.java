@@ -98,6 +98,10 @@ class StudentServiceTest {
         assertEquals("227",rez.get(4));
     }
 
-
+    @Test
+    void findStudentByUsername(){
+        Student student=new Student("1001","Pop","Claudia","223","clau@yahoo.com","1");
+        assertEquals(student,service.findByUsername("clau"));
+    }
 
 }

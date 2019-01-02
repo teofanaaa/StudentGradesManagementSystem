@@ -1,0 +1,9 @@
+admin/sha1:64000:18:4KepqX8ygJgiUQpyP5y2lqUgvWpSp/mB:shL6hDnRPginzu97t8SDmIfT/ADMIN/Administrator
+ioana/sha1:64000:18:Cf2baeuuggPHZ3ClrYMP8wSB1CrOmIFv:odWP+I+HQBp9HcXhhRP4GWX5/STUDENT/Amariei Ioana
+patricia/sha1:64000:18:DJCEt6nbQV+AazRFHQjHXQC/fqXwJveo:XNOa0HbDLUov46eqZkhpWi0Z/STUDENT/Ilie Patricia
+vlad/sha1:64000:18:yXXSX9o2EiNPyZgKNTvxkh1N6vejnwzG:HlrecyixpXb9wNV35Vw9dVr8/STUDENT/Pop Vlad
+maria/sha1:64000:18:/fHuvqX9lZJ3EjU7jfvb6tDYzVeZi34t:Ldsdz2Ktykfx3/1yXqSQbMKf/STUDENT/Pop Maria
+teofanaenachioiu/sha1:64000:18:CCU4mPcSFti793MbXzTorN9k9pmu/4kC:0gPMaytnKYmgnqHAzVhAnAsS/STUDENT/Enachioiu Teofana
+adriana/sha1:64000:18:nBTMuVggViYXDebk8BJYJ6TGS1krQOdj:X10IOtAyLVsyYh6maWwoni8B/PROFESOR/Guran Adriana
+camelia/sha1:64000:18:21sDjImdRyOOVXsOABZ1WhtSkOUnbD1u:td4bF7Y+gGtyTT1gvVU3McO//PROFESOR/Serban Camelia
+adriana/sha1:64000:18:nBTMuVggViYXDebk8BJYJ6TGS1krQOdj:X10IOtAyLVsyYh6maWwoni8B/PROFESOR/Guran Adriana

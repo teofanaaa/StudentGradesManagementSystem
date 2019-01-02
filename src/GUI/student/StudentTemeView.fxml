@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.student.StudentTemeController">
+   <children>
+      <AnchorPane fx:id="secondHeader" layoutX="6.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="subtitle" alignment="CENTER" contentDisplay="CENTER" layoutX="324.0" layoutY="17.0" text="TEME" textFill="WHITE" AnchorPane.leftAnchor="580.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableView" layoutX="42.0" layoutY="76.0" prefHeight="204.0" prefWidth="575.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
+        <columns>
+          <TableColumn fx:id="ColumnId" prefWidth="60.0" text="Nr. crt." />
+          <TableColumn fx:id="ColumnDescriere" prefWidth="300.0" text="Descriere" />
+            <TableColumn fx:id="ColumnDeadline" prefWidth="105.0" text="Deadline" />
+            <TableColumn fx:id="ColumnPredare" prefWidth="105.0" text="Data predare" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

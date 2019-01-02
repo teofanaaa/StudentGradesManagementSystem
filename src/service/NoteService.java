@@ -6,22 +6,36 @@ import domain.Tema;
 import javafx.util.Pair;
 import repository.Repository;
 import utils.Config;
+import utils.DataChanged;
+import utils.EventType;
+import utils.GUIUtils;
 import validator.ValidationException;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import static utils.Config.filterAndSorter;
 import static utils.Config.getWeek;
 import static utils.Config.getWeekUni;
 
 public class NoteService extends AbstractService<Pair<String,String>, Nota> {
+    public Repository<String, Student> getRepoS() {
+        return repoS;
+    }
+
     Repository<String, Student> repoS;
     Repository<String, Tema> repoT;
+
+    public Repository<String, Tema> getRepoT() {
+        return repoT;
+    }
 
     private enum Action {
         ADD, UPDATE
@@ -98,7 +112,13 @@ public class NoteService extends AbstractService<Pair<String,String>, Nota> {
         }
         else feedbackAutomat="Nu s-au aplicat penalizari. ";
         Nota returned=add(entity);
-        if(returned==null) adaugaInFile(entity,feedbackAutomat+ feedback, Action.ADD);
+        if(returned==null){
+            notifyObservers(new DataChanged(EventType.ADD));
+            adaugaInFile(entity,feedbackAutomat+ feedback, Action.ADD);
+        }
+        else {
+            GUIUtils.showErrorMessage("Studentul are deja nota!");
+        }
         return returned;
     }
 
@@ -110,6 +130,7 @@ public class NoteService extends AbstractService<Pair<String,String>, Nota> {
             if (!motivat) {
                 feedbackAutomat = aplicarePenalizari(entity);
             } else feedbackAutomat="Nu s-au aplicat penalizari. ";
+            notifyObservers(new DataChanged(EventType.UPDATE));
             adaugaInFile(entity,  feedbackAutomat+ feedback, Action.UPDATE);
         }
         return update(entity);
@@ -146,8 +167,8 @@ public class NoteService extends AbstractService<Pair<String,String>, Nota> {
         return returned;
     }
 
-    public List<Nota> listaNoteStudent(String idStudent){
-        return super.getAll().stream()
+    public ArrayList<Nota> listaNoteStudent(String idStudent){
+        return (ArrayList<Nota>) super.getAll().stream()
                 .filter(x->x.getStudentID().equals(idStudent))
                 .collect(Collectors.toList());
     }
@@ -214,16 +235,32 @@ public class NoteService extends AbstractService<Pair<String,String>, Nota> {
                 .get().getGrupa().equals(grupa), null);
     }
 
-    public double getMediaStudent(String idStudent) {
+    public Double getMediaStudent(String idStudent) {
         double suma = 0;
         int pondere=1;
         Tema tema;
+        if(listaNoteStudent(idStudent)==null)
+            return 0d;
         for ( Nota nota : listaNoteStudent(idStudent)) {
             tema=repoT.findOne(Optional.of(nota.getTemaID())).get();
             pondere=Integer.parseInt(tema.getDeadline())-Integer.parseInt(tema.getDataPredare());
             suma =suma+ Double.parseDouble(nota.getNotaProf())*pondere;
         }
         return suma / 14;
+    }
+
+    public Double getMediaLaborator(Tema tema, List<Student> allStudents){
+        double suma = 0;
+        if(allStudents.size()==0)
+            return 0d;
+        for ( Student student:allStudents) {
+            Nota nota=find(new Pair<>(student.getID(),tema.getID()));
+            if(nota!=null){
+                suma =suma+ Double.parseDouble(nota.getNotaProf());
+
+            }
+        }
+        return suma / allStudents.size();
     }
 
     private Integer nrStudentiGrupa(String grupa){
@@ -260,5 +297,14 @@ public class NoteService extends AbstractService<Pair<String,String>, Nota> {
         });
     }
 
+    public Integer nrStudentiMedie(int strat, int end){
+        Integer nr=0;
+        for(Student student:repoS.findAll()){
+            double media=getMediaStudent(student.getID());
+            if(media>=strat &&media<end)
+                nr++;
+        }
+        return nr;
+    }
 
 }
