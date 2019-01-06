@@ -5,10 +5,7 @@ import domain.Student;
 import domain.Tema;
 import javafx.util.Pair;
 import repository.Repository;
-import utils.DataChanged;
-import utils.EventType;
-import utils.GUIUtils;
-import utils.Observable;
+import utils.*;
 import validator.ValidationException;
 
 import java.util.Comparator;
@@ -86,7 +83,22 @@ public class TemaService extends AbstractService<String, Tema> {
             returned=super.add(entity);
             if(returned!=null)
                 GUIUtils.showErrorMessage("ID existent!");
-            else notifyObservers(new DataChanged(EventType.ADD));
+            else {
+                notifyObservers(new DataChanged(EventType.ADD));
+                SendEmail email=new SendEmail("teofanaenachioiu@yahoo.com",
+                        "Dragi studenti,\n\n"
+                                +"Tocmai a fost adaugata o noua tema de laborator. \n"
+                                +"Informatii tema: \n"
+                                +"NR TEMA: "+entity.getID()+".\n "
+                                +"DESCRIERE TEMA: "+entity.getDescriere()+"\n"
+                                +"DEADLINE: "+entity.getDeadline()+"\n"
+                                +"DATA PREDARII: "+entity.getDataPredare()
+                                +"\n\n"+
+                                "Pe curand!",
+                        "Adaugare tema"
+                );
+                email.run();
+            }
         }
         catch (ValidationException e){
             GUIUtils.showErrorMessage(e.getMessage());
@@ -120,11 +132,30 @@ public class TemaService extends AbstractService<String, Tema> {
             if(!tema.getDeadline().equals(entity.getDeadline())) {
                 modific=modificDeadline(entity, tema.getDeadline(), entity.getDeadline());
             }
+            if(!tema.getDescriere().equals(entity.getDescriere()))
+                modific=true;
             if(entity.getDataPredare().equals("")) entity.setDataPredare(tema.getDataPredare());
         }
         Tema returned=entity;
-        if(modific) returned=super.update(entity);
-        notifyObservers(new DataChanged(EventType.UPDATE));
+        if(modific) {
+            returned=super.update(entity);
+        }
+        if(returned==null){
+            notifyObservers(new DataChanged(EventType.UPDATE));
+            SendEmail email=new SendEmail("teofanaenachioiu@yahoo.com",
+                    "Dragi studenti,\n\n"
+                    +"Tocmai s-a modificat tema de laborator numarul "+entity.getID()+".\n "
+                            +"Datele actualizate sunt: \n"
+                            +"DESCRIERE TEMA: "+entity.getDescriere()+"\n"
+                            +"DEADLINE: "+entity.getDeadline()+"\n"
+                            +"DATA PREDARII: "+entity.getDataPredare()
+                            +"\n\n"+
+                            "Pe curand!",
+                    "Modificare tema"
+                    );
+            email.run();
+        }
+
         return returned;
     }
 

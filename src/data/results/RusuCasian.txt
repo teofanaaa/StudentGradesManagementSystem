@@ -1,72 +1,72 @@
-Situatia studentului Enachioiu Teofana la disciplina MAP
+Situatia studentului Rusu Casian la disciplina MAP
 
 > S-a adaugat o nota noua!
 Tema: 1
 Nota: 10
 Predata in saptamana: 1
 Deadline: 2
-Feedback: Nu s-au aplicat penalizari. Foarte bine!
+Feedback: Nu s-au aplicat penalizari.  
 
 > S-a adaugat o nota noua!
 Tema: 2
 Nota: 9
 Predata in saptamana: 2
 Deadline: 3
-Feedback: Nu s-au aplicat penalizari. Ar mai trebui niste inbunatatiri
+Feedback: Nu s-au aplicat penalizari.  
 
 > S-a adaugat o nota noua!
 Tema: 3
 Nota: 10
 Predata in saptamana: 3
 Deadline: 5
-Feedback: Nu s-au aplicat penalizari. Bravo
+Feedback: Nu s-au aplicat penalizari.  
 
 > S-a adaugat o nota noua!
 Tema: 4
 Nota: 8
 Predata in saptamana: 5
 Deadline: 6
-Feedback: Nu s-au aplicat penalizari. Incomplet
+Feedback: Nu s-au aplicat penalizari.  
 
 > S-a adaugat o nota noua!
 Tema: 5
 Nota: 10
 Predata in saptamana: 6
 Deadline: 7
-Feedback: Nu s-au aplicat penalizari. 
+Feedback: Nu s-au aplicat penalizari.  
 
 > S-a adaugat o nota noua!
 Tema: 6
-Nota: 7
+Nota: 9
 Predata in saptamana: 7
 Deadline: 8
-Feedback: Nu s-au aplicat penalizari. 
+Feedback: Nu s-au aplicat penalizari.  
 
 > S-a adaugat o nota noua!
 Tema: 7
 Nota: 10
 Predata in saptamana: 8
 Deadline: 9
-Feedback: Nu s-au aplicat penalizari. 
+Feedback: Nu s-au aplicat penalizari.  
 
 > S-a adaugat o nota noua!
 Tema: 8
-Nota: 10
+Nota: 9
 Predata in saptamana: 9
 Deadline: 10
-Feedback: Nu s-au aplicat penalizari.
+Feedback: Nu s-au aplicat penalizari.  
 
 > S-a adaugat o nota noua!
 Tema: 9
-Nota: 7.5
+Nota: 10
 Predata in saptamana: 10
 Deadline: 12
-Feedback: Nota a fost diminuata cu 2.5 pucte din cauza intarzierii. Foarte bineee.
+Feedback: Nu s-au aplicat penalizari.  
 
 > S-a adaugat o nota noua!
 Tema: 10
 Nota: 10
 Predata in saptamana: 12
 Deadline: 14
-Feedback: Tema a fost predata la timp.  Foarte bine
+Feedback: Nu s-au aplicat penalizari.  
 

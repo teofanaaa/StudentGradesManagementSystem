@@ -138,6 +138,7 @@ public class ProfesorNoteController implements Observer<DataChanged> {
         if(dataStudent.size()>0) GUIUtils.comboBoxIdStudentNota.setValue(dataStudent.get(0));
         GUIUtils.comboBoxIdTemaNota.setItems(data);
         GUIUtils.comboBoxIdTemaNota.setValue(data.get(0));
+        GUIUtils.textAreaFeedbackNota.setText(" ");
 
         EventHandler notare= event -> serviceNote.add(GUIUtils.comboBoxIdStudentNota.getValue().split(":")[0],
                 GUIUtils.comboBoxIdTemaNota.getValue(),

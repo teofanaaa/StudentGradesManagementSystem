@@ -86,14 +86,15 @@ public class ProfesorMainController {
 
         this.serviceTema.addObserver(temeController);
         this.serviceStudent.addObserver(studentiController);
+        this.serviceNote.addObserver(noteController);
 
         this.serviceStudent.addObserver(rapoarteController);
         this.serviceNote.addObserver(rapoarteController);
         this.serviceTema.addObserver(rapoarteController);
 
-//        this.serviceStudent.addObserver(statisticiController);
-//        this.serviceNote.addObserver(statisticiController);
-//        this.serviceTema.addObserver(statisticiController);
+        this.serviceStudent.addObserver(statisticiController);
+        this.serviceNote.addObserver(statisticiController);
+        this.serviceTema.addObserver(statisticiController);
     }
 
     public void setPrimaryStage(Stage primaryStage){

@@ -52,7 +52,8 @@ public class StartApplication extends Application {
 //                "teofanaenachioiu@yahoo.com","1"));
  //       temaService.add(new Tema("1","Introducere in Java","2","1"));
  //       noteService.add("1001","1","10","Foarte bine!",true);
-        System.out.println(utilizatorService.getAll().size());
+      //  noteService.remove(new Pair<>("1001","9"));
+     //   System.out.println(utilizatorService.getAll().size());
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/GUI/login/sample.fxml"));
         AnchorPane rootLayout = loader.load();

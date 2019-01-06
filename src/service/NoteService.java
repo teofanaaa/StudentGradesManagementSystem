@@ -5,10 +5,7 @@ import domain.Student;
 import domain.Tema;
 import javafx.util.Pair;
 import repository.Repository;
-import utils.Config;
-import utils.DataChanged;
-import utils.EventType;
-import utils.GUIUtils;
+import utils.*;
 import validator.ValidationException;
 
 import java.io.*;
@@ -115,6 +112,15 @@ public class NoteService extends AbstractService<Pair<String,String>, Nota> {
         if(returned==null){
             notifyObservers(new DataChanged(EventType.ADD));
             adaugaInFile(entity,feedbackAutomat+ feedback, Action.ADD);
+//            Student student=repoS.findOne(Optional.of(idStudent)).get();
+//            SendEmail email=new SendEmail("teofanaenachioiu@yahoo.com",
+//                    "Draga "+ student.getPrenume()+",\n\n"
+//                    +"Tocmai ai primit nota " +entity.getNotaProf()
+//                            +" la tema "+idTema+"\nFeedback la tema: "+feedbackAutomat+feedback+"\n\n"+
+//                            "Pe curand!",
+//                    "Nota noua"
+//                    );
+//            email.run();
         }
         else {
             GUIUtils.showErrorMessage("Studentul are deja nota!");

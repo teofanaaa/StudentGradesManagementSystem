@@ -2,69 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GUI/StartApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/admin/AdminMainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/admin/AdminProfesoriController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/admin/AdminStudentiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/admin/AdminUsersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/login/sample.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorMainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorRapoarteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorStudentiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorTemeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/student/StudentMainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/student/StudentNoteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/student/StudentTemeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repository/RepositoryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/files.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/reload.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/rubbish-bin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/statistics.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/teacher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/AutoCompleteComboBoxListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/GUIUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/imagini/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/imagini/confirmation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/imagini/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/imagini/information.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/imagini/warnning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teste/SendEmailTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/SendEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StudentGradesManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StudentGradesManagementSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/GUI/sample.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Catalog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Catalog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Profesori.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Profesori.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Studenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Studenti.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Teme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Teme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Utilizatori.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/files/Utilizatori.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/results/EnachioiuTeofana.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/results/PopMaria.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/login/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/sample.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/files/Catalog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/files/Catalog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/files/Profesori.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/files/Profesori.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/files/Studenti.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/files/Studenti.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/files/Teme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/files/Teme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/files/Utilizatori.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/files/Utilizatori.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/raport/complet.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/results/EnachioiuTeofana.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/results/PopMaria.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/database/DatabaseCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/database/DatabaseCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/file/UtilizatorRepositoryInFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/file/UtilizatorRepositoryInFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AbstractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AbstractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/results/EnachioiuTeofana.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/results/EnachioiuTeofana.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/profesor/ProfesorMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/results/EnachioiuTeofana.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/results/EnachioiuTeofana.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/NoteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ProfesorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ProfesorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Rapoarte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Rapoarte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/TemaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/TemaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/UtilizatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UtilizatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teste/StudentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teste/StudentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validator/ValidatorTema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/validator/ValidatorTema.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -134,7 +83,7 @@
     <session id="-1822653961">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
@@ -145,10 +94,12 @@
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.54" value="1" />
+          <entry key="project.open.time.54" value="2" />
+          <entry key="project.open.time.55" value="1" />
+          <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.60" value="1" />
           <entry key="project.open.time.61" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -157,11 +108,11 @@
           <entry key="css" value="10" />
           <entry key="fxml" value="41" />
           <entry key="html" value="1" />
-          <entry key="java" value="587" />
+          <entry key="java" value="606" />
           <entry key="jpg" value="4" />
           <entry key="png" value="15" />
           <entry key="sql" value="1" />
-          <entry key="txt" value="85" />
+          <entry key="txt" value="89" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
@@ -171,8 +122,8 @@
           <entry key="CSS" value="10" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="19" />
-          <entry key="JAVA" value="587" />
-          <entry key="PLAIN_TEXT" value="85" />
+          <entry key="JAVA" value="606" />
+          <entry key="PLAIN_TEXT" value="89" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="44" />
         </counts>
@@ -182,16 +133,16 @@
           <entry key="class" value="7" />
           <entry key="css" value="93" />
           <entry key="fxml" value="86" />
-          <entry key="java" value="36677" />
-          <entry key="txt" value="527" />
+          <entry key="java" value="37622" />
+          <entry key="txt" value="529" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="7" />
           <entry key="CSS" value="93" />
-          <entry key="JAVA" value="36677" />
-          <entry key="PLAIN_TEXT" value="527" />
+          <entry key="JAVA" value="37622" />
+          <entry key="PLAIN_TEXT" value="529" />
           <entry key="XML" value="86" />
         </counts>
       </usages-collector>
@@ -202,11 +153,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/StartApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
+            <state relative-caret-position="192">
+              <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -215,27 +166,44 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java">
+        <entry file="file://$PROJECT_DIR$/src/service/NoteService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
+            <state relative-caret-position="251">
+              <caret line="153" column="23" lean-forward="true" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#778#779#0" expanded="true" />
+                <element signature="e#806#807#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/service/TemaService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="147" column="57" selection-start-line="147" selection-start-column="57" selection-end-line="147" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/service/AbstractService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="260">
+              <caret line="33" column="67" lean-forward="true" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
               <folding>
-                <element signature="e#2613#2614#0" expanded="true" />
-                <element signature="e#2662#2663#0" expanded="true" />
+                <element signature="e#2636#2637#0" expanded="true" />
+                <element signature="e#2685#2686#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data/results/RusuCasian.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-788" />
           </provider>
         </entry>
       </file>
@@ -246,8 +214,8 @@
       <list>
         <option value="Arquillian JUnit Test Class" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -274,10 +242,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/utils/Config.java" />
-        <option value="$PROJECT_DIR$/src/teste/RapoarteTest.java" />
-        <option value="$PROJECT_DIR$/src/service/UtilizatorService.java" />
-        <option value="$PROJECT_DIR$/src/repository/file/UtilizatorRepositoryInFile.java" />
         <option value="$PROJECT_DIR$/src/GUI/login/sample.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/student/StudentMainView.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/student/StudentTemeView.fxml" />
@@ -304,7 +268,6 @@
         <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorStudentiController.java" />
         <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteView.fxml" />
         <option value="$PROJECT_DIR$/src/service/StudentService.java" />
-        <option value="$PROJECT_DIR$/src/service/TemaService.java" />
         <option value="$PROJECT_DIR$/src/GUI/admin/AdminMainController.java" />
         <option value="$PROJECT_DIR$/src/data/files/Profesori.txt" />
         <option value="$PROJECT_DIR$/src/data/files/backupParole.txt" />
@@ -312,19 +275,24 @@
         <option value="$PROJECT_DIR$/src/data/files/Utilizatori.txt" />
         <option value="$PROJECT_DIR$/src/service/ProfesorService.java" />
         <option value="$PROJECT_DIR$/src/GUI/admin/AdminUsersController.java" />
-        <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java" />
         <option value="$PROJECT_DIR$/src/resources/styleSheet.css" />
         <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorRapoarteView.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorRapoarteController.java" />
         <option value="$PROJECT_DIR$/src/service/Rapoarte.java" />
         <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiView.fxml" />
-        <option value="$PROJECT_DIR$/src/service/NoteService.java" />
-        <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java" />
-        <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorMainController.java" />
         <option value="$PROJECT_DIR$/src/repository/database/DatabaseCreator.java" />
         <option value="$PROJECT_DIR$/src/GUI/admin/AdminProfesoriController.java" />
         <option value="$PROJECT_DIR$/src/service/AbstractService.java" />
+        <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorMainController.java" />
+        <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java" />
+        <option value="$PROJECT_DIR$/src/teste/SendEmailTest.java" />
+        <option value="$PROJECT_DIR$/src/utils/Config.java" />
+        <option value="$PROJECT_DIR$/src/utils/SendEmail.java" />
+        <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java" />
+        <option value="$PROJECT_DIR$/src/service/NoteService.java" />
         <option value="$PROJECT_DIR$/src/GUI/StartApplication.java" />
+        <option value="$PROJECT_DIR$/src/data/results/EnachioiuTeofana.txt" />
+        <option value="$PROJECT_DIR$/src/service/TemaService.java" />
       </list>
     </option>
   </component>
@@ -389,19 +357,37 @@
             <path>
               <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -423,13 +409,13 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546285005542" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546794883759" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/fontawesomefx-materialdesignfont-2.0.26-9.1.2.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/fakeSMTP-2.0.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -440,22 +426,22 @@
       <recent name="teste" />
       <recent name="domain" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\StudentGradesManagementSystem\libs" />
+      <recent name="D:\StudentGradesManagementSystem\src\resources" />
+      <recent name="D:\StudentGradesManagementSystem\src\utils\imagini" />
+      <recent name="D:\StudentGradesManagementSystem\src\GUI\login" />
+      <recent name="D:\StudentGradesManagementSystem\src" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\StudentGradesManagementSystem\src\resources" />
       <recent name="D:\StudentGradesManagementSystem\src\GUI\admin" />
       <recent name="D:\StudentGradesManagementSystem\src\utils\imagini" />
       <recent name="D:\StudentGradesManagementSystem\src\utils" />
       <recent name="D:\StudentGradesManagementSystem\src\GUI\login" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\StudentGradesManagementSystem\src\resources" />
-      <recent name="D:\StudentGradesManagementSystem\src\utils\imagini" />
-      <recent name="D:\StudentGradesManagementSystem\src\GUI\login" />
-      <recent name="D:\StudentGradesManagementSystem\src" />
-      <recent name="D:\StudentGradesManagementSystem\data\files" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -553,26 +539,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigTest.sendMailTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StudentGradesManagementSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="teste.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="teste" />
-      <option name="MAIN_CLASS_NAME" value="teste.ConfigTest" />
-      <option name="METHOD_NAME" value="sendMailTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="NotaRepositoryDatabaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StudentGradesManagementSystem" />
       <extension name="coverage">
@@ -583,6 +549,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="teste" />
       <option name="MAIN_CLASS_NAME" value="teste.NotaRepositoryDatabaseTest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SendEmailTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StudentGradesManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teste.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="teste" />
+      <option name="MAIN_CLASS_NAME" value="teste.SendEmailTest" />
+      <option name="METHOD_NAME" value="run" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -642,19 +628,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.ConfigTest.sendMailTest" />
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="JUnit.StudentServiceTest.findStudentByUsername" />
       <item itemvalue="Application.StartApplication" />
       <item itemvalue="JUnit.NotaRepositoryDatabaseTest" />
+      <item itemvalue="JUnit.SendEmailTest.run" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.StartApplication" />
+        <item itemvalue="JUnit.SendEmailTest.run" />
         <item itemvalue="JUnit.NotaRepositoryDatabaseTest" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="JUnit.StudentServiceTest.findStudentByUsername" />
-        <item itemvalue="JUnit.ConfigTest.sendMailTest" />
       </list>
     </recent_temporary>
   </component>
@@ -683,22 +669,13 @@
       <workItem from="1546162728738" duration="44313000" />
       <workItem from="1546263992578" duration="19688000" />
       <workItem from="1546284468996" duration="586000" />
+      <workItem from="1546503408133" duration="490000" />
+      <workItem from="1546546673624" duration="473000" />
+      <workItem from="1546778028932" duration="11268000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StudentServiceTest_adaugaTest - 2018.12.28 at 11h 40m 58s.xml">
-      <configuration name="StudentServiceTest.adaugaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentServiceTest_adaugaTest - 2018.12.28 at 11h 41m 22s.xml">
-      <configuration name="StudentServiceTest.adaugaTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfigTest_sendMailTest - 2018.12.28 at 12h 37m 18s.xml">
-      <configuration name="ConfigTest.sendMailTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfigTest_sendMailTest - 2018.12.28 at 12h 38m 50s.xml">
-      <configuration name="ConfigTest.sendMailTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ConfigTest_sendMailTest - 2018.12.28 at 12h 41m 03s.xml">
       <configuration name="ConfigTest.sendMailTest" configurationId="JUnit" />
     </history-entry>
@@ -717,9 +694,21 @@
     <history-entry file="NotaRepositoryDatabaseTest - 2018.12.31 at 20h 08m 25s.xml">
       <configuration name="NotaRepositoryDatabaseTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SendEmailTest_run - 2019.01.06 at 17h 18m 33s.xml">
+      <configuration name="SendEmailTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SendEmailTest_run - 2019.01.06 at 17h 22m 46s.xml">
+      <configuration name="SendEmailTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SendEmailTest_run - 2019.01.06 at 17h 24m 08s.xml">
+      <configuration name="SendEmailTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SendEmailTest_run - 2019.01.06 at 17h 27m 34s.xml">
+      <configuration name="SendEmailTest.run" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240984000" />
+    <option name="totallyTimeSpent" value="253215000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -732,9 +721,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.25340393" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2647504" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="1.0" />
       <window_info id="Designer" order="3" />
@@ -743,7 +731,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28019324" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28019324" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -825,14 +813,6 @@
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/service/NoteService.java</url>
-          <line>105</line>
-          <properties class="service.NoteService" method="add">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/service/ProfesorService.java</url>
           <line>129</line>
           <properties class="service.ProfesorService" method="stergeStudenti">
@@ -848,6 +828,14 @@
           </properties>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java</url>
+          <line>60</line>
+          <properties class="GUI.profesor.ProfesorStatisticiController" method="update">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -856,32 +844,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/data/results/EnachioiuTeofana.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/results/PopaVlad.txt" />
-    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="8" column="115" selection-start-line="8" selection-start-column="115" selection-end-line="8" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorStudentiView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data/results/FalutaAlina Elena.txt" />
     <entry file="file://$PROJECT_DIR$/src/utils/GUIUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4641">
           <caret line="293" column="23" selection-start-line="293" selection-start-column="23" selection-end-line="293" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -958,31 +925,10 @@
     <entry file="file://$PROJECT_DIR$/src/resources/rubbish-bin.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/ProfesorService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-930">
           <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/TemaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorStudentiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="129" column="8" lean-forward="true" selection-start-line="129" selection-start-column="8" selection-end-line="131" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1027,13 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/student/StudentNoteController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1045,29 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorMainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="126" column="5" lean-forward="true" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/NoteService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="307" column="5" selection-start-line="307" selection-start-column="5" selection-end-line="307" selection-end-column="5" />
-          <folding>
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1138,16 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="1772" selection-start-line="1772" selection-end-line="1772" />
-          <folding>
-            <element signature="e#66921#66922#0" expanded="true" />
-            <element signature="e#66966#66967#0" expanded="true" />
-            <element signature="e#78827#78828#0" expanded="true" />
-            <element signature="e#78858#78859#0" expanded="true" />
-            <element signature="e#79010#79011#0" expanded="true" />
-            <element signature="e#79046#79047#0" expanded="true" />
-            <element signature="e#83880#83881#0" expanded="true" />
-            <element signature="e#83916#83917#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1185,13 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repository/database/AbstractRepositoryDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/UtilizatorService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1201,38 +1100,123 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/repository/database/DatabaseCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
+        <state relative-caret-position="2074">
           <caret line="124" selection-start-line="124" selection-end-line="124" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java">
+    <entry file="file://$PROJECT_DIR$/src/repository/database/AbstractRepositoryDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        <state relative-caret-position="255">
+          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/SendEmail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/AbstractService.java">
+    <entry file="file://$PROJECT_DIR$/src/teste/SendEmailTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorMainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
+          <caret line="44" column="86" lean-forward="true" selection-start-line="44" selection-start-column="86" selection-end-line="44" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="79" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="142" selection-start-line="142" selection-end-line="142" />
           <folding>
-            <element signature="e#2613#2614#0" expanded="true" />
-            <element signature="e#2662#2663#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorStudentiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/StartApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
+        <state relative-caret-position="192">
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/results/EnachioiuTeofana.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/TemaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="147" column="57" selection-start-line="147" selection-start-column="57" selection-end-line="147" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/results/RusuCasian.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-788" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/NoteService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="153" column="23" lean-forward="true" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
+          <folding>
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/AbstractService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="33" column="67" lean-forward="true" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
+          <folding>
+            <element signature="e#2636#2637#0" expanded="true" />
+            <element signature="e#2685#2686#0" expanded="true" />
           </folding>
         </state>
       </provider>
