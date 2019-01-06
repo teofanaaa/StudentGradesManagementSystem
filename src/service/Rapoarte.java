@@ -44,7 +44,11 @@ public class Rapoarte {
             "<html lang=\"en\">\n" +
             "<head>\n" +
             "    <title>Raport</title>\n" +
-            "    <link href=\"reportStylesheet.css\" rel=\"stylesheet\" type=\"text/css\" />\n" +
+         //   "<link rel=\\”stylesheet\\” href=\\”stylesheets/custom-report-stylesheet.css\\” type=\\”text/css\\” />"+
+       "    <link href=\"reportStylesheet.css\" rel=\"stylesheet\" type=\"text/css\" />\n" +
+    //        "    <link href=\"raportStyle.css\" rel=\"stylesheet\" type=\"text/css\" />\n" +
+//            "<LINK REL=\"STYLESHEET\" HREF=\"http://srv3/css/reports.css\"" +
+//            "TYPE=\"text/css\">"+
             "</head>\n" +
             "<body>\n" +
             "    <h1>Raport</h1>\n" +

@@ -63,3 +63,10 @@ Predata in saptamana: 10
 Deadline: 12
 Feedback: Nu s-au aplicat penalizari.  
 
+> S-a adaugat o nota noua!
+Tema: 10
+Nota: 10
+Predata in saptamana: 12
+Deadline: 14
+Feedback: Nu s-au aplicat penalizari.  
+

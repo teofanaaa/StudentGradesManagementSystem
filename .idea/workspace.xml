@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/teste/SendEmailTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/SendEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudentGradesManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StudentGradesManagementSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/results/EnachioiuTeofana.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/results/EnachioiuTeofana.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/profesor/ProfesorMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorNoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/results/EnachioiuTeofana.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/results/EnachioiuTeofana.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/NoteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/TemaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/TemaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/results/RusuCasian.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StudentGradesManagementSystem/data/results/RusuCasian.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raport.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raportfrumos.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Rapoarte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Rapoarte.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,7 +101,7 @@
           <entry key="css" value="10" />
           <entry key="fxml" value="41" />
           <entry key="html" value="1" />
-          <entry key="java" value="606" />
+          <entry key="java" value="607" />
           <entry key="jpg" value="4" />
           <entry key="png" value="15" />
           <entry key="sql" value="1" />
@@ -122,7 +115,7 @@
           <entry key="CSS" value="10" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="19" />
-          <entry key="JAVA" value="606" />
+          <entry key="JAVA" value="607" />
           <entry key="PLAIN_TEXT" value="89" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="44" />
@@ -133,7 +126,7 @@
           <entry key="class" value="7" />
           <entry key="css" value="93" />
           <entry key="fxml" value="86" />
-          <entry key="java" value="37622" />
+          <entry key="java" value="37652" />
           <entry key="txt" value="529" />
         </counts>
       </usages-collector>
@@ -141,7 +134,7 @@
         <counts>
           <entry key="CLASS" value="7" />
           <entry key="CSS" value="93" />
-          <entry key="JAVA" value="37622" />
+          <entry key="JAVA" value="37652" />
           <entry key="PLAIN_TEXT" value="529" />
           <entry key="XML" value="86" />
         </counts>
@@ -187,7 +180,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/service/AbstractService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
@@ -195,6 +188,19 @@
               <folding>
                 <element signature="e#2636#2637#0" expanded="true" />
                 <element signature="e#2685#2686#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/service/Rapoarte.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+              <folding>
+                <element signature="e#951#952#0" expanded="true" />
+                <element signature="e#988#989#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -278,7 +284,6 @@
         <option value="$PROJECT_DIR$/src/resources/styleSheet.css" />
         <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorRapoarteView.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorRapoarteController.java" />
-        <option value="$PROJECT_DIR$/src/service/Rapoarte.java" />
         <option value="$PROJECT_DIR$/src/GUI/profesor/ProfesorStatisticiView.fxml" />
         <option value="$PROJECT_DIR$/src/repository/database/DatabaseCreator.java" />
         <option value="$PROJECT_DIR$/src/GUI/admin/AdminProfesoriController.java" />
@@ -293,6 +298,7 @@
         <option value="$PROJECT_DIR$/src/GUI/StartApplication.java" />
         <option value="$PROJECT_DIR$/src/data/results/EnachioiuTeofana.txt" />
         <option value="$PROJECT_DIR$/src/service/TemaService.java" />
+        <option value="$PROJECT_DIR$/src/service/Rapoarte.java" />
       </list>
     </option>
   </component>
@@ -357,37 +363,13 @@
             <path>
               <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StudentGradesManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StudentGradesManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -409,7 +391,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546794883759" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546799479050" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -671,7 +653,7 @@
       <workItem from="1546284468996" duration="586000" />
       <workItem from="1546503408133" duration="490000" />
       <workItem from="1546546673624" duration="473000" />
-      <workItem from="1546778028932" duration="11268000" />
+      <workItem from="1546778028932" duration="12909000" />
     </task>
     <servers />
   </component>
@@ -708,7 +690,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253215000" />
+    <option name="totallyTimeSpent" value="254856000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -721,8 +703,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2647504" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2647504" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="1.0" />
       <window_info id="Designer" order="3" />
@@ -731,7 +714,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28019324" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28019324" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -822,7 +805,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/service/Rapoarte.java</url>
-          <line>176</line>
+          <line>180</line>
           <properties class="service.Rapoarte" method="generateReport">
             <option name="EMULATED" value="true" />
           </properties>
@@ -944,17 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/Rapoarte.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="161" column="92" lean-forward="true" selection-start-line="161" selection-start-column="92" selection-end-line="161" selection-end-column="92" />
-          <folding>
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1217,6 +1189,17 @@
           <folding>
             <element signature="e#2636#2637#0" expanded="true" />
             <element signature="e#2685#2686#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/Rapoarte.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding>
+            <element signature="e#951#952#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
           </folding>
         </state>
       </provider>
