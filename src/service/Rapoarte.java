@@ -14,6 +14,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.image.WritableImage;
+import javafx.stage.Stage;
 import javafx.util.Pair;
 import utils.DataChanged;
 import utils.Observer;
@@ -22,6 +23,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +31,10 @@ import java.util.Map;
 import static utils.Config.filterAndSorter;
 import static utils.Config.pathRaport;
 
+/***
+ * Class Rapoarte
+ * Generator de rapoarte
+ */
 public class Rapoarte {
     public StudentService getStudentService() {
         return studentService;
@@ -39,52 +45,60 @@ public class Rapoarte {
     private NoteService notaService;
 
     String grupa = null;
-    String baseUri = pathRaport;
     String beginHtml = "<!DOCTYPE html>\n" +
             "<html lang=\"en\">\n" +
             "<head>\n" +
             "    <title>Raport</title>\n" +
-         //   "<link rel=\\”stylesheet\\” href=\\”stylesheets/custom-report-stylesheet.css\\” type=\\”text/css\\” />"+
-       "    <link href=\"reportStylesheet.css\" rel=\"stylesheet\" type=\"text/css\" />\n" +
-    //        "    <link href=\"raportStyle.css\" rel=\"stylesheet\" type=\"text/css\" />\n" +
-//            "<LINK REL=\"STYLESHEET\" HREF=\"http://srv3/css/reports.css\"" +
-//            "TYPE=\"text/css\">"+
+            "<link href=\"D:/StudentGradesManagementSystem/src/data/raport/mytablestyle.css\" rel=\"stylesheet\" type=\"text/css\" >\n"+
             "</head>\n" +
             "<body>\n" +
             "    <h1>Raport</h1>\n" +
-            "    <hr>";
+            "    <hr>"+
+            "    <br>";
     String endHtml = "</body>\n" +
             "</html>";
-    String beginCard = "<table class = \"Card\">\n" +
-            "        <tr>";
-    String endCard = "</tr>\n" +
-            "    </table>\n" +
-            "    <br>";
-    String beginTableData = "<td><table class = \"DataTable\">" +
-            "<tr><th>Nume</th><th>Media</th></tr>";
-    String endTableData = "</table></td>";
 
+    /**
+     * Constructorul clasei
+     * @param studentService - Service de student
+     * @param temaService - Service de teme
+     * @param notaService - Service de note
+     */
     public Rapoarte(StudentService studentService, TemaService temaService, NoteService notaService) {
         this.studentService = studentService;
         this.temaService = temaService;
         this.notaService = notaService;
     }
 
-    private String generateDataColumn(String... text) {
-        String dataCol = "<td class=\"DataColumn LeftColumn\">";
-
-        for (String t : text) {
-            dataCol =dataCol + "<p>" + t + "</p>";
+    /***
+     * Initializeaza tabelele
+     * @param numeRaport - titlul raportului
+     * @param numeColoane - coloanele tabelului
+     * @return string (cod html)
+     */
+    private String initTable(String numeRaport, String... numeColoane){
+        String html="";
+        html += "<table class=\"zui-table\">\n";
+        html += " <tr id=\"titlu\">\n";
+        html += "     <th COLSPAN=\"3\">\n";
+        html += "         <h3> <br> "+ numeRaport +"</h3>\n";
+        html += "     </th>\n";
+        html += " </tr>\n";
+        for(String coloana:numeColoane){
+            html+="<th>"+coloana+"</th>";
         }
-
-        dataCol = dataCol+ "</td>";
-        return dataCol;
+        return html;
     }
 
-    private String generateTableRow(String... text) {
+    /***
+     * Adauga randuri in tabel
+     * @param date datele tabelului
+     * @return string (cod html)
+     */
+    private String addContentToTable(String... date){
         String dataCol = "<tr>";
 
-        for (String t : text) {
+        for (String t : date) {
             dataCol += "<td>" + t + "</td>";
         }
 
@@ -92,6 +106,22 @@ public class Rapoarte {
         return dataCol;
     }
 
+    /***
+     * Sfarsitul tabelului
+     * @return string (cod html)
+     */
+    private String endTable(){
+        return " </table><br><br>";
+    }
+
+    /**
+     * Constructorul raportului
+     * @param mediaStudenti - boolean ce indica daca se va construi sau nu acest raport
+     * @param studentiNuExamen - boolean ce indica daca se va construi sau nu acest raport
+     * @param mediaLaboratoare - boolean ce indica daca se va construi sau nu acest raport
+     * @param studentiTemePredateLaTimp - boolean ce indica daca se va construi sau nu acest raport
+     * @return string (cod html)
+     */
     private String constructReport(boolean mediaStudenti, boolean studentiNuExamen,
                                    boolean mediaLaboratoare, boolean studentiTemePredateLaTimp) {
         String html = beginHtml;
@@ -105,80 +135,72 @@ public class Rapoarte {
         List<Tema> allTeme = temaService.getAll();
 
         if (mediaStudenti) {
-            html += beginCard;
-            html += generateDataColumn("Media", "studentilor", "la", "laborator");
-
-            html += beginTableData;
+            html += initTable("Medie studenti","Nume","Grupa","Media");
             for (Student student : allStudents) {
-                html += generateTableRow(student.getNume()+ " "+ student.getPrenume(),
-                        //String.valueOf(student.getGrupa()),
+                html += addContentToTable(student.getNume()+ " "+ student.getPrenume(),
+                         String.valueOf(student.getGrupa()),
                         String.format("%.2f", notaService.getMediaStudent(student.getID())));
             }
-            html += endTableData;
-
-            html += endCard;
+            html+=endTable();
         }
 
         if (studentiNuExamen) {
-            html += beginCard;
-            html += generateDataColumn("Studentii", "care nu", "pot intra", "in examen");
-
-            html += beginTableData;
+            html += initTable("Studentii care nu intra in examen","Nume","Grupa","Media");
             for (Student student : allStudents) {
                 Double media = notaService.getMediaStudent(student.getID());
                 if (media < 5)
-                    html += generateTableRow(student.getNume(), //String.valueOf(student.getGrupa()),
+                    html += addContentToTable(student.getNume(),
+                            String.valueOf(student.getGrupa()),
                             String.format("%.2f", media));
             }
-            html += endTableData;
-
-            html += endCard;
+            html+=endTable();
         }
 
         if(mediaLaboratoare){
-            html += beginCard;
-            html += generateDataColumn("Media", "notelor", "la", "laborator");
-
-            html += beginTableData;
+            html += initTable("Media laboratoarelor","Laborator","Media");
             for (Tema tema : allTeme) {
-                html += generateTableRow("Laborator "+tema.getID(),
-                        //String.valueOf(tema.),
+                html += addContentToTable("Laborator "+tema.getID(),
                         String.format("%.2f", notaService.getMediaLaborator(tema,allStudents)));
             }
-            html += endTableData;
-
-            html += endCard;
+            html+=endTable();
         }
 
         if(studentiTemePredateLaTimp){
-            html += beginCard;
-            html += generateDataColumn("Studentii", "care au", "predat", "toate","temele");
+            html += initTable("Studentii care au predat toate temele","Nume","Grupa","Media");
 
             int nr=0;
-            html += beginTableData;
-
-            for(Student student:allStudents)
-                for (Tema tema : temaService.getAll()){
-                    if(notaService.find(new Pair<>(student.getID(),tema.getID()))!=null) {
+            for(Student student:allStudents){
+                for (Tema tema : temaService.getAll()) {
+                    if (notaService.find(new Pair<>(student.getID(), tema.getID())) != null) {
                         nr++;
+                    }
                 }
-                if(nr==temaService.getAll().size())
-                    html += generateTableRow(student.getNume() + " " + student.getPrenume(),
-                        //    String.valueOf(student.getGrupa()),
+                if (nr == temaService.getAll().size())
+                    html += addContentToTable(student.getNume() + " " + student.getPrenume(),
+                            String.valueOf(student.getGrupa()),
                             String.format("%.2f", notaService.getMediaStudent(student.getID())));
-            }
-            html += endTableData;
+                nr = 0;
 
-            html += endCard;
+            }
+            html+=endTable();
         }
 
         html += endHtml;
         return html;
     }
 
-
-
-    public void generateReport(File file, String grupa, boolean mediaStudenti, boolean studentiNuExamen,
+    /**
+     * Generare raport pdf
+     * @param adresa - calea pana la fila
+     * @param file - fila
+     * @param grupa - grupa pe care se face raportul
+     * @param mediaStudenti - boolean ce indica daca se va construi sau nu acest raport
+     * @param studentiNuExamen - boolean ce indica daca se va construi sau nu acest raport
+     * @param mediaLaboratoare - boolean ce indica daca se va construi sau nu acest raport
+     * @param studentiTemePredateLaTimp - boolean ce indica daca se va construi sau nu acest raport
+     * @throws Exception
+     */
+    public void generateReport(String adresa, File file, String grupa, boolean mediaStudenti, boolean studentiNuExamen,
                                boolean mediaLaboratoare, boolean studentiTemePredateLaTimp) throws Exception {
         if (! grupa.equals("Toate grupele"))
             this.grupa = grupa;
@@ -188,7 +210,7 @@ public class Rapoarte {
         String html = constructReport(mediaStudenti, studentiNuExamen, mediaLaboratoare, studentiTemePredateLaTimp);
 
         ConverterProperties properties = new ConverterProperties();
-        properties.setBaseUri(baseUri);
+        properties.setBaseUri(adresa);
         properties.setFontProvider(new DefaultFontProvider(true, true, true));
         HtmlConverter.convertToPdf(html, new FileOutputStream(file), properties);
 

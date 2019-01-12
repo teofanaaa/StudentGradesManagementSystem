@@ -4,13 +4,22 @@ import javafx.util.Pair;
 
 import java.util.Objects;
 
-
+/**
+ * Clasa Nota
+ */
 public class Nota implements HasID<Pair<String, String>> {
     private String studentID;
     private String temaID;
     private String dataCurenta;
     private String notaProf;
 
+    /**
+     * Constructorul clasei
+     * @param studentID - string (id studentului)
+     * @param temaID - string (id tema)
+     * @param dataCurenta - string (data curenta: 1...14)
+     * @param notaProf - string (nota profesorului: 1...10)
+     */
     public Nota(String studentID, String temaID, String dataCurenta, String notaProf) {
         this.studentID = studentID;
         this.temaID = temaID;

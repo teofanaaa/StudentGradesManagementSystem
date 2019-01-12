@@ -2,11 +2,27 @@ package domain;
 
 import java.io.Serializable;
 
+/**
+ * Clasa Utilizator
+ */
 public class Utilizator implements Serializable, HasID<String> {
     private String username;
     private String hash;
     private TipUtilizator tip;
     private String nume;
+
+    /**
+     * Constructorul clasei
+     * @param username - string (numele de utilizator)
+     * @param hash - string (parola criptata)
+     * @param nume - string (numele utilizatorului)
+     */
+    public Utilizator(String username, String hash, String nume) {
+        this.username = username;
+        this.hash = hash;
+        this.tip = TipUtilizator.ADMIN;
+        this.nume = nume;
+    }
 
     public String getNume() {
         return nume;
@@ -28,13 +44,6 @@ public class Utilizator implements Serializable, HasID<String> {
     @Override
     public void setID(String s) {
         this.username=s;
-    }
-
-    public Utilizator(String username, String hash, String nume) {
-        this.username = username;
-        this.hash = hash;
-        this.tip = TipUtilizator.ADMIN;
-        this.nume = nume;
     }
 
     public Utilizator(String username, String hash, TipUtilizator type,String nume) {
@@ -64,4 +73,6 @@ public class Utilizator implements Serializable, HasID<String> {
     public String toString() {
         return username + "/" + hash + "/" + tip+"/"+nume;
     }
+
+
 }

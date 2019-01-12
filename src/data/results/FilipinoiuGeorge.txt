@@ -1,0 +1,51 @@
+Situatia studentului Filipinoiu George la disciplina MAP
+
+> S-a adaugat o nota noua!
+Tema: 1
+Nota: 10
+Predata in saptamana: 1
+Deadline: 2
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 2
+Nota: 9
+Predata in saptamana: 2
+Deadline: 3
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 3
+Nota: 10
+Predata in saptamana: 3
+Deadline: 5
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 5
+Nota: 10
+Predata in saptamana: 6
+Deadline: 7
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 7
+Nota: 10
+Predata in saptamana: 8
+Deadline: 9
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 9
+Nota: 10
+Predata in saptamana: 10
+Deadline: 12
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 10
+Nota: 10
+Predata in saptamana: 12
+Deadline: 14
+Feedback: Nu s-au aplicat penalizari.  
+

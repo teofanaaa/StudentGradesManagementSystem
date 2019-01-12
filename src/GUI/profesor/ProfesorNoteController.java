@@ -84,6 +84,7 @@ public class ProfesorNoteController implements Observer<DataChanged> {
     }
 
     private void updatePersonView() {
+        setLastPage();
         tableView.getItems().setAll(model.subList(currentPageIndex * itemsPerPage,
                 ((currentPageIndex * itemsPerPage + itemsPerPage <= model.size()) ? currentPageIndex * itemsPerPage +
                         itemsPerPage : model.size())));
@@ -215,11 +216,11 @@ public class ProfesorNoteController implements Observer<DataChanged> {
         Predicate<Nota> p2 = n->
                 this.comboBoxNumeFilter.getSelectionModel().getSelectedItem()==null ||
                         this.serviceStudent.find(n.getStudentID()).getPrenume()
-                                .contains(this.comboBoxNumeFilter.getSelectionModel().getSelectedItem()) ||
-                        this.comboBoxNumeFilter.getSelectionModel().getSelectedItem()
-                                .contains(this.serviceStudent.find(n.getStudentID()).getPrenume())||
+                                .contains(this.comboBoxNumeFilter.getSelectionModel().getSelectedItem()) &&
                         this.serviceStudent.find(n.getStudentID()).getNume()
                                 .contains(this.comboBoxNumeFilter.getSelectionModel().getSelectedItem()) ||
+                        this.comboBoxNumeFilter.getSelectionModel().getSelectedItem()
+                                .contains(this.serviceStudent.find(n.getStudentID()).getPrenume())&&
                         this.comboBoxNumeFilter.getSelectionModel().getSelectedItem()
                                 .contains(this.serviceStudent.find(n.getStudentID()).getNume());
 

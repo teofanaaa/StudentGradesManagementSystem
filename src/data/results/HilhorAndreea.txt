@@ -1,0 +1,44 @@
+Situatia studentului Hilhor Andreea la disciplina MAP
+
+> S-a adaugat o nota noua!
+Tema: 1
+Nota: 8
+Predata in saptamana: 1
+Deadline: 2
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 2
+Nota: 7
+Predata in saptamana: 2
+Deadline: 3
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 3
+Nota: 10
+Predata in saptamana: 3
+Deadline: 5
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 8
+Nota: 10
+Predata in saptamana: 9
+Deadline: 10
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 9
+Nota: 10
+Predata in saptamana: 10
+Deadline: 12
+Feedback: Nu s-au aplicat penalizari.  
+
+> S-a adaugat o nota noua!
+Tema: 10
+Nota: 10
+Predata in saptamana: 12
+Deadline: 14
+Feedback: Nu s-au aplicat penalizari.  
+

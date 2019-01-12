@@ -7,8 +7,8 @@ package validator;
 public class ValidationException extends RuntimeException {
 
     /**
-     * Constructor
-     * @param message - String (mesajul afisat la aruncarea exceptiei)
+     * Constructorul clasei
+     * @param message - string (mesajul afisat la aruncarea exceptiei)
      */
     public ValidationException(String message) {
         super(message);

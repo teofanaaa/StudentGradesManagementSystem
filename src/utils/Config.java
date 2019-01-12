@@ -10,13 +10,18 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Config {
-    private static String usernameAdmin = "proiect.map.teo@gmail.com";
-    private static String passwordAdmin = "admin@catalog";
+
     public static String pathRezultate="./src/data/results/" ;
-    public static String pathDatabase="./src/data/" ;
     public static String pathRaport="./src/data/raport" ;
 
-
+    /**
+     * Filtrare si sortare
+     * @param lista - list (lista de sortat)
+     * @param p - predicate (algoritmul dupa care se sorteaza)
+     * @param c - comparator
+     * @param <E> - entitatea de stortat/filtrat
+     * @return lista sortata/filtrata
+     */
     public static <E> List<E> filterAndSorter(List<E> lista, Predicate<E> p, Comparator<E> c) {
         if (lista == null || lista.isEmpty()) {
             return new ArrayList<>();
@@ -29,17 +34,31 @@ public class Config {
         return lista.stream().filter(p).sorted(c).collect(Collectors.toList());
     }
 
+    /**
+     * Saptamana curenta din an
+     * @return integer
+     */
     public static Integer getCurrentWeek() {
         LocalDate date = LocalDate.now();
         WeekFields weekFields = WeekFields.of(Locale.getDefault());
         return date.get(weekFields.weekOfWeekBasedYear());
     }
 
+    /**
+     * Saptamana in care se afa o anumita data calendaristica
+     * @param date - data calendaristica
+     * @return integer
+     */
     public static Integer getWeek(LocalDate date) {
         WeekFields weekFields = WeekFields.of(Locale.getDefault());
         return date.get(weekFields.weekOfWeekBasedYear());
     }
 
+    /**
+     * Saptamana universitara dintr-o anumita saptamana calendaristica
+     * @param saptCurenta - integer (saptamana calendaristica)
+     * @return integer
+     */
     public static Integer getWeekUni(Integer saptCurenta){
         Integer dif=saptCurenta-39;
         if(dif<0)
@@ -51,6 +70,10 @@ public class Config {
         return dif;
     }
 
+    /**
+     * Saptamana universitara curenta
+     * @return integer
+     */
     public static Integer getWeekUni(){
         Integer saptCurenta=getCurrentWeek();
         Integer dif=saptCurenta-39;
@@ -62,46 +85,4 @@ public class Config {
         if(dif.equals(15)||dif.equals(16)) return dif-2;
         return dif;
     }
-
-    public static void sendMail(List<String> emails,String subject,String text){
-        for(String email:emails){
-            sendMail(email,subject,text);
-        }
-    }
-
-    public static void sendMail(String to, String subject, String text) {
-
-    //    new Thread(()-> {
-            Properties props = new Properties();
-            props.put("mail.smtp.host", "smtp.gmail.com");
-            props.put("mail.smtp.socketFactory.port", "465");
-            props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-            props.put("mail.smtp.auth", "true");
-            props.put("mail.smtp.prot", "465");
-
-            Session session = Session.getDefaultInstance(props,
-                    new Authenticator() {
-                        protected PasswordAuthentication getPasswordAuthentication() {
-
-                            return new PasswordAuthentication(usernameAdmin, passwordAdmin);
-                        }
-                    }
-            );
-            try {
-                Message message = new MimeMessage(session);
-                message.setFrom(new InternetAddress(usernameAdmin));
-                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-                message.setSubject(subject);
-                message.setText(text);
-                Transport.send(message);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-      //  }).start();
-    }
-
-
-
-
 }

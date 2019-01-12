@@ -12,6 +12,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * Clasa AbstractRepositoryDatabase
+ * @param <Id> id-ul entitatii
+ * @param <E> entitatea de salvat in repository
+ */
 public abstract class AbstractRepositoryDatabase<Id, E extends HasID<Id>> implements Repository<Id,E> {
     protected String condition;
     protected Validator<E> validator;
@@ -20,6 +25,13 @@ public abstract class AbstractRepositoryDatabase<Id, E extends HasID<Id>> implem
     protected static PreparedStatement preparedStatement = null;
     protected String getAllQuery;
 
+    /**
+     * Constructorul clasei
+     * @param validator - clasa validator
+     * @param databaseCreator - batabase handler-ul
+     * @param tableName - numele tabelului corespunzator entitatii de salvat
+     * @param condition - conditia dupa care se face salvarea in baza de date (id-urile, unul sau mai multe)
+     */
     public AbstractRepositoryDatabase(Validator<E> validator,
                                       DatabaseCreator databaseCreator, String tableName,String condition) {
         this.condition=condition;
@@ -29,17 +41,45 @@ public abstract class AbstractRepositoryDatabase<Id, E extends HasID<Id>> implem
         this.getAllQuery = "SELECT * FROM " + tableName;
     }
 
+    /**
+     * Creaza entitatea din result set
+     * @param resultSet
+     * @return entitate
+     */
     protected abstract Optional<E> createEntityFromResultSet(ResultSet resultSet);
 
+    /**
+     * Insereaza o entitate in baza de date
+     * @throws SQLException daca nu s-a putut insera
+     */
     protected abstract void insertStatement() throws SQLException;
 
+    /**
+     * Updateaza datele unui entitati
+     * @param id - id-ul entitatii
+     * @throws SQLException
+     */
     protected abstract void updateStatement(Id id) throws SQLException;
 
+    /**
+     * Adauga un rand in tabelul corespunzator
+     * @param entity - entitatea de inregistrat
+     * @throws SQLException
+     */
     protected abstract void populateStatementValues(E entity) throws SQLException;
 
+    /**
+     * Seteaza id-ul entitatii
+     * @param id
+     * @throws SQLException
+     */
     protected abstract void setID(Id id)throws SQLException;
 
-
+    /**
+     * Functia de cautare
+     * @param id - string (id-ul entitatii de cautat)
+     * @return entitatea
+     */
     @Override
     public Optional<E> findOne(Optional<Id> id) {
         id.orElseThrow(()-> new IllegalArgumentException("Nu ai dat parametru"));
@@ -63,6 +103,10 @@ public abstract class AbstractRepositoryDatabase<Id, E extends HasID<Id>> implem
         }
     }
 
+    /**
+     * Lista de entitati
+     * @return iterable
+     */
     @Override
     public Iterable<E> findAll() {
         ResultSet resultSet = databaseCreator.execQuery(getAllQuery);
@@ -87,6 +131,13 @@ public abstract class AbstractRepositoryDatabase<Id, E extends HasID<Id>> implem
         return elements;
     }
 
+    /**
+     * Salvarea unei entitati in baza de date
+     * @param entity - entitatea de salvat
+     * entity must be not null
+     * @return entitatea (daca nu s-a putut salva), null (entitatea a fost salvata)
+     * @throws ValidationException (datele sunt invalide)
+     */
     @Override
     public Optional<E> save(Optional<E> entity) throws ValidationException {
         entity.orElseThrow(()-> new IllegalArgumentException("Nu ai dat parametru"));
@@ -103,6 +154,11 @@ public abstract class AbstractRepositoryDatabase<Id, E extends HasID<Id>> implem
         return entity;
     }
 
+    /**
+     * Sterge o intregistrare din baza de date
+     * @param id - string (id-ul entitatii de sters)
+     * @return entitatea stearasa / null (nu exista id-ul)
+     */
     @Override
     public Optional<E> delete(Optional<Id> id) {
         id.orElseThrow(()-> new IllegalArgumentException("Nu ai dat parametru"));
@@ -135,6 +191,11 @@ public abstract class AbstractRepositoryDatabase<Id, E extends HasID<Id>> implem
         }
     }
 
+    /**
+     * Actualizare date entitate
+     * @param entity - entitatea de actualizat
+     * @return entitatea (entitatea nu exista)/null (entitatea a fost actualizata)
+     */
     @Override
     public Optional<E> update(Optional<E> entity) {
         entity.orElseThrow(()-> new IllegalArgumentException("Nu ai dat parametru"));

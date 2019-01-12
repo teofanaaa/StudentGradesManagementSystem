@@ -16,6 +16,11 @@ public class ValidatorStudent implements Validator<Student> {
     private static Pattern usrEmailPtrn = Pattern.compile("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$");
     private static Pattern usrIdProfPtrn = Pattern.compile("^[1-9]{1,}[0-9]*$");
 
+    /**
+     * Validarea id-ului profesorului indrumator de la laborator
+     * @param id - numar intreg >0
+     * @throws ValidationException daca id-ul nu e valid
+     */
     private static void validateIdProf(String id){
         Matcher mtch = usrIdProfPtrn.matcher(id);
         if(!mtch.matches()){

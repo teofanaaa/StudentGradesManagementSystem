@@ -14,14 +14,27 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+/**
+ * Clasa AbstractService
+ * @param <ID> (id-ul entitatii)
+ * @param <E> (entitatea)
+ */
 public class AbstractService<ID , E extends HasID<ID>>  implements Service<ID,E>, Observable<DataChanged> {
     private Repository<ID,E> repository;
     protected ArrayList<Observer<DataChanged>> observers = new ArrayList<>();
 
+    /**
+     * Constructorul clasei
+     * @param repository
+     */
     public AbstractService(Repository<ID, E> repository) {
         this.repository = repository;
     }
 
+    /**
+     * Dimensiunea listei de entitati
+     * @return integer
+     */
     @Override
     public Integer size() {
         return StreamSupport.stream(repository.findAll().spliterator(),false)
@@ -29,6 +42,12 @@ public class AbstractService<ID , E extends HasID<ID>>  implements Service<ID,E>
                 .size();
     }
 
+    /**
+     * Adauga entitatea in service
+     * @param entity (entitatea de adaugat)
+     * @return entitatea de adaugat (nu sa putut face adaugarea)/ null(entitatea a fost adaugata)
+     * @throws ValidationException (date invalide)
+     */
     @Override
     public E add(E entity) throws ValidationException {
         Optional<E> e=repository.save(Optional.ofNullable(entity));
@@ -39,6 +58,11 @@ public class AbstractService<ID , E extends HasID<ID>>  implements Service<ID,E>
         return e.get();
     }
 
+    /**
+     * Sterge o entitate din service
+     * @param id - ID (id-ul entitatii)
+     * @return entitate (daca id-ul exista)/ null (nu esita id-ul)
+     */
     @Override
     public E remove(ID id){
         Optional<E> removed = repository.delete(Optional.of(id));
@@ -49,6 +73,9 @@ public class AbstractService<ID , E extends HasID<ID>>  implements Service<ID,E>
         return null;
     }
 
+    /**
+     * Sterge toate entitatile din lista
+     */
     @Override
     public void removeAll() {
         for(E entity: repository.findAll()){
@@ -57,6 +84,12 @@ public class AbstractService<ID , E extends HasID<ID>>  implements Service<ID,E>
         }
     }
 
+    /**
+     * Actulaizeaza o entitate
+     * @param entity (entitatea de actualizat)
+     * @return entitatea (nu exista id-ul)/null (entitatea a fost adaugata)
+     * @throws ValidationException (date invalide)
+     */
     @Override
     public E update(E entity) throws ValidationException{
         Optional<E> updated = repository.update(Optional.of(entity));
@@ -67,12 +100,21 @@ public class AbstractService<ID , E extends HasID<ID>>  implements Service<ID,E>
         return updated.get();
     }
 
+    /**
+     * Cauta entitatea cu id-ul dat
+     * @param id - ID (id-ul entitatii)
+     * @return entitatea / null (nu exista id-ul cautat)
+     */
     @Override
     public E find(ID id){
         Optional<E> entity= repository.findOne(Optional.of(id));
         return entity.orElse(null);
     }
 
+    /**
+     * Getter pentru toate entitatile
+     * @return lista de entitati
+     */
     @Override
     public ArrayList<E> getAll() {
         return (ArrayList<E>) StreamSupport.stream(repository.findAll().spliterator(),false)
@@ -80,6 +122,8 @@ public class AbstractService<ID , E extends HasID<ID>>  implements Service<ID,E>
     }
 
     //Observer
+
+    //Implementarea metodelor
 
     @Override
     public void addObserver(Observer<DataChanged> e) {

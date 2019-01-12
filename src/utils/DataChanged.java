@@ -6,8 +6,4 @@ public class DataChanged implements Event {
     public DataChanged(EventType type) {
         this.type = type;
     }
-
-    public EventType getType() {
-        return type;
-    }
 }

@@ -7,11 +7,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
+/**
+ * Clasa TemaRepositoryDatabase
+ */
 public class TemaRepositoryDatabase  extends AbstractRepositoryDatabase<String, Tema> {
+
+    /**
+     * Constructorul clasei
+     * @param databaseCreator - database handler
+     */
     public TemaRepositoryDatabase( DatabaseCreator databaseCreator) {
         super( new ValidatorTema(), databaseCreator, "Teme", "WHERE id=?");
     }
 
+    /**
+     * Creaza o tema din resultset
+     * @param resultSet
+     * @return Tema
+     */
     @Override
     protected Optional<Tema> createEntityFromResultSet(ResultSet resultSet) {
         Optional<Tema> returned = Optional.empty();
@@ -31,12 +44,21 @@ public class TemaRepositoryDatabase  extends AbstractRepositoryDatabase<String, 
         return returned;
     }
 
+    /**
+     * Cod sql de inserare a unei teme in baza de date
+     * @throws SQLException
+     */
     @Override
     protected void insertStatement() throws SQLException {
         String query = "INSERT INTO Teme (id, descriere, deadline,dataPredare) values (?, ?, ?, ?)";
         preparedStatement = DatabaseCreator.getConnection().prepareStatement(query);
     }
 
+    /**
+     * Cod sql pentru actualizarea unei teme in baza de date
+     * @param id - string (id-ul temei)
+     * @throws SQLException
+     */
     @Override
     protected void updateStatement(String id) throws SQLException {
         String query = "UPDATE Teme SET" +
@@ -46,6 +68,11 @@ public class TemaRepositoryDatabase  extends AbstractRepositoryDatabase<String, 
         preparedStatement.setString(5, id);
     }
 
+    /**
+     * Adaugarea valorilor atributelor in statementul curent
+     * @param entity - tema de adaugat/actualizat
+     * @throws SQLException
+     */
     @Override
     protected void populateStatementValues(Tema entity) throws SQLException {
         preparedStatement.setString(1, entity.getID());
@@ -54,6 +81,11 @@ public class TemaRepositoryDatabase  extends AbstractRepositoryDatabase<String, 
         preparedStatement.setString(4, entity.getDataPredare());
     }
 
+    /**
+     * Adaugarea id-urilor in statementul curent
+     * @param s - string (id teme)
+     * @throws SQLException
+     */
     @Override
     protected void setID(String s) throws SQLException {
         preparedStatement.setString(1,s);

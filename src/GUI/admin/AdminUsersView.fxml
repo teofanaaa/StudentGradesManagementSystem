@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.TableColumn?>
@@ -20,6 +21,7 @@
             <TableColumn fx:id="ColumnTip" prefWidth="190.0" text="Tip utilizator" />
         </columns>
       </TableView>
-      <Pagination fx:id="pagination" layoutX="238.0" layoutY="311.0" prefHeight="50.0" prefWidth="200.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="50.0" />
+      <Pagination fx:id="pagination" layoutX="437.0" layoutY="311.0" prefHeight="50.0" prefWidth="188.0" stylesheets="@../../resources/styleSheet.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="437.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="305.0" />
+      <JFXTextField fx:id="searchBar" layoutX="60.0" layoutY="81.0" onAction="#handleSearch" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" onKeyTyped="#handleSearch" prefHeight="30.0" prefWidth="180.0" promptText="Search" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="310.0" />
    </children>
 </AnchorPane>

@@ -2,6 +2,9 @@ package domain;
 
 import java.util.Objects;
 
+/**
+ * Clasa Student
+ */
 public class Student implements HasID<String> {
     private String idStudent;
     private String nume;
@@ -10,6 +13,15 @@ public class Student implements HasID<String> {
     private String email;
     private String indrumatorLab;
 
+    /**
+     * Constructorul clasei
+     * @param idStudent - string (id student)
+     * @param nume - string (numele studentului)
+     * @param prenume - string (prenumele studentului)
+     * @param grupa - string (grupa studentului)
+     * @param email - string (email-ul studentului)
+     * @param indrumatorLab - string (id-ul indrumatorului de la laborator)
+     */
     public Student(String idStudent, String nume, String prenume, String grupa, String email, String indrumatorLab) {
         this.idStudent = idStudent;
         this.nume = nume;

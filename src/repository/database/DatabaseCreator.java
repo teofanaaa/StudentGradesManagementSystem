@@ -2,16 +2,19 @@ package repository.database;
 
 import java.sql.*;
 
+/**
+ * Clasa DatabaseCreator
+ */
 public final class DatabaseCreator {
     private static String dbURL ;
     // jdbc Connection
     private static Connection conn = null;
     private static Statement stmt = null;
 
-    static Connection getConnection() {
-        return conn;
-    }
-
+    /**
+     * Constructorul clasei
+     * @param locatie - string (locatia unde urmeaza sa fie creata baza de date)
+     */
     public DatabaseCreator(String locatie) {
         createConnection(locatie);
         createTable("Profesori", profesoriTable());
@@ -23,6 +26,18 @@ public final class DatabaseCreator {
         //shutdown();
     }
 
+    /**
+     * Getter conexiune
+     * @return
+     */
+    static Connection getConnection() {
+        return conn;
+    }
+
+    /**
+     * Crearea conexiunii la locatia data
+     * @param locatie - string (locatia unde urmeaza sa fie creata baza de date)
+     */
     private static void createConnection(String locatie)
     {
         try
@@ -38,6 +53,10 @@ public final class DatabaseCreator {
         }
     }
 
+    /**
+     * Crearea tabelului corespunzator entitatii Profesor
+     * @return string (cod sql)
+     */
     private String profesoriTable(){
         return "CREATE TABLE PROFESORI (" +
                 " id VARCHAR(10) primary key," +
@@ -46,6 +65,10 @@ public final class DatabaseCreator {
                 ")";
     }
 
+    /**
+     * Crearea tabelului corespunzator entitatii Student
+     * @return string (cod sql)
+     */
     private String studentiTable(){
         return "CREATE TABLE STUDENTI (" +
                 " id VARCHAR(7) primary key," +
@@ -59,6 +82,10 @@ public final class DatabaseCreator {
                 ")";
     }
 
+    /**
+     * Crearea tabelului corespunzator entitatii Tema
+     * @return string (cod sql)
+     */
     private String temeTable(){
         return "CREATE TABLE TEME (" +
                 " id VARCHAR(4) primary key," +
@@ -87,6 +114,10 @@ public final class DatabaseCreator {
                 ")";
     }
 
+    /**
+     * Crearea tabelului corespunzator entitatii Utilizator
+     * @return string (cod sql)
+     */
     private String utilizatoriTable(){
         return "CREATE TABLE UTILIZATORI (" +
                 " username VARCHAR(100) primary key," +
@@ -96,8 +127,11 @@ public final class DatabaseCreator {
                 ")";
     }
 
-
-
+    /**
+     * Creare tabel
+     * @param table - string (numele tabelului)
+     * @param code - string (cod sql corespunzator crearii tabelului)
+     */
     private void createTable(String table,String code) {
         try {
             stmt = conn.createStatement();
@@ -113,6 +147,11 @@ public final class DatabaseCreator {
         }
     }
 
+    /**
+     * Executie query
+     * @param query - string (codul sql al query-ului)
+     * @return resultset
+     */
     ResultSet execQuery(String query) {
         ResultSet result;
         try {
@@ -125,6 +164,11 @@ public final class DatabaseCreator {
         return result;
     }
 
+    /**
+     * Executa actiunea corespunzatoarea query-ului
+     * @param query - string (cod sql)
+     * @return boolean (T: s-a executat query-ul, F: nu s-a putut executa query-ul)
+     */
     public boolean execAction(String query) {
         try {
             stmt = conn.createStatement();
@@ -135,6 +179,9 @@ public final class DatabaseCreator {
         }
     }
 
+    /**
+     * Shotdown la baza de date
+     */
     private static void shutdown()
     {
         try

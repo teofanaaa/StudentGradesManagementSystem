@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 public class ValidatorTema implements Validator<Tema> {
     private static Pattern idPtrn = Pattern.compile("^[1-9][0-9]*$");
     private static Pattern datePtrn = Pattern.compile("^[1-9]|1[0-4]$");
+
     /**
      * Validarea id-ului temei
      * @param id - numar intreg >0
@@ -22,6 +23,7 @@ public class ValidatorTema implements Validator<Tema> {
             throw new ValidationException("Id incorect!");
         }
     }
+
     /**
      * Validarea data
      * @param data - numar intreg >0
@@ -45,7 +47,7 @@ public class ValidatorTema implements Validator<Tema> {
     }
 
     /**
-     * Validarea entitatii student
+     * Validarea entitatii tema
      * @param entity - entitatea de validat
      * @throws ValidationException daca tema nu e valida
      */

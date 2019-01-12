@@ -1,0 +1,44 @@
+Situatia studentului Marginean Florentina la disciplina MAP
+
+> S-a adaugat o nota noua!
+Tema: 1
+Nota: 10
+Predata in saptamana: 1
+Deadline: 2
+Feedback: Nu s-au aplicat penalizari. 
+
+> S-a adaugat o nota noua!
+Tema: 2
+Nota: 5
+Predata in saptamana: 2
+Deadline: 3
+Feedback: Nu s-au aplicat penalizari. 
+
+> S-a adaugat o nota noua!
+Tema: 3
+Nota: 8
+Predata in saptamana: 3
+Deadline: 5
+Feedback: Nu s-au aplicat penalizari. 
+
+> S-a adaugat o nota noua!
+Tema: 4
+Nota: 10
+Predata in saptamana: 5
+Deadline: 6
+Feedback: Nu s-au aplicat penalizari. 
+
+> S-a adaugat o nota noua!
+Tema: 5
+Nota: 10
+Predata in saptamana: 6
+Deadline: 7
+Feedback: Nu s-au aplicat penalizari. 
+
+> S-a adaugat o nota noua!
+Tema: 6
+Nota: 8
+Predata in saptamana: 7
+Deadline: 8
+Feedback: Nu s-au aplicat penalizari. 
+

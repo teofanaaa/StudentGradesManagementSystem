@@ -14,18 +14,34 @@ import java.util.Optional;
 
 import static utils.Config.filterAndSorter;
 
-
+/**
+ * Clasa TemaService
+ */
 public class TemaService extends AbstractService<String, Tema> {
     Repository<String, Student> repoS;
     Repository<Pair<String,String>, Nota> repoN;
 
+    /**
+     * Constructorul clasei
+     * @param repository - repository de teme
+     * @param repoS - repository de studenti
+     * @param repoN - repository de note
+     */
     public TemaService(Repository<String, Tema> repository,Repository<String, Student> repoS,Repository<Pair<String,String>, Nota> repoN) {
         super(repository);
         this.repoS=repoS;
         this.repoN=repoN;
     }
 
-
+    /**
+     * Modificare deadline
+     * Nu folosesc metoda asta
+     * @param id - string
+     * @param deadlineVechiString - string
+     * @param deadlineNouString - string
+     * @return Tema
+     * @throws ValidationException (date invalide)
+     */
     public Tema modificareDeadline(String id, String deadlineVechiString, String deadlineNouString) throws ValidationException{
         if(utils.Config.getWeekUni()==null)throw new ValidationException("Nu se mai pot modifica deadline-urile!");
         Tema tema=find(id);
@@ -55,6 +71,14 @@ public class TemaService extends AbstractService<String, Tema> {
         return returned;
     }
 
+    /**
+     * Modificare deadline
+     * @param tema - tema la care se modifica deadline-ul
+     * @param deadlineVechiString - string
+     * @param deadlineNouString - string
+     * @return true/false (s-a modifcat sau nu)
+     * @throws ValidationException (date invalide)
+     */
     public boolean modificDeadline(Tema tema, String deadlineVechiString, String deadlineNouString) throws ValidationException{
         boolean modific=false;
         if(utils.Config.getWeekUni()==null)throw new ValidationException("Nu se mai pot modifica deadline-urile!");
@@ -76,6 +100,12 @@ public class TemaService extends AbstractService<String, Tema> {
         return modific;
     }
 
+    /**
+     * Adaugare tema
+     * @param entity (entitatea de adaugat)
+     * @return netity(nu s-a putet adauga tema)/ null (tema adaugata)
+     * @throws ValidationException (date invalide)
+     */
     @Override
     public Tema add(Tema entity) throws ValidationException {
         Tema returned=entity;
@@ -106,6 +136,11 @@ public class TemaService extends AbstractService<String, Tema> {
         return returned;
     }
 
+    /**
+     * Sterge tema
+     * @param s - string (id tema)
+     * @return tema (tema stearsa)/ null (nu exista tema cu id dat)
+     */
     @Override
     public Tema remove(String s) {
         Tema returned=super.remove(s);
@@ -116,12 +151,21 @@ public class TemaService extends AbstractService<String, Tema> {
         return returned;
     }
 
+    /**
+     * Sterege toate temele
+     */
     @Override
     public void removeAll() {
         super.removeAll();
         notifyObservers(new DataChanged(EventType.DELETE));
     }
 
+    /**
+     * Actualizare tema
+     * @param entity (entitatea de actualizat)
+     * @return entity(nu s-a putut actualiza)/ null (tema actualizata)
+     * @throws ValidationException (date invalide)
+     */
     @Override
     public Tema update(Tema entity) throws ValidationException {
         Tema tema=find(entity.getID());
@@ -167,6 +211,11 @@ public class TemaService extends AbstractService<String, Tema> {
         return filterAndSorter(getAll(), null, Comparator.comparing(Tema::getDeadline));
     }
 
+    /**
+     * Filtrare teme dupa cuvant cheie
+     * @param keyword - string
+     * @return lista de teme
+     */
     public List<Tema> filtreazaTemaKeyword(String keyword) {
         return filterAndSorter(getAll(),
                 entity -> entity.getDescriere().toLowerCase().contains(keyword.toLowerCase()) ||
@@ -174,6 +223,10 @@ public class TemaService extends AbstractService<String, Tema> {
                 Comparator.comparing(Tema::getID));
     }
 
+    /**
+     * Sterge note la o tema
+     * @param idTema - string (id tema)
+     */
     private void stergeNote(String idTema){
         for(Student student:repoS.findAll()){
             Pair<String, String> id=new Pair(student.getID(),idTema);

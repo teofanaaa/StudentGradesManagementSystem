@@ -2,12 +2,22 @@ package domain;
 
 import java.util.Objects;
 
+/**
+ * Clasa Tema
+ */
 public class Tema implements HasID<String>{
     private String idTema;
     private String descriere;
     private String deadline;
     private String dataPredare;
 
+    /**
+     * Constructorul clasei
+     * @param idTema - string (id tema)
+     * @param descriere - string (detalii despre tema)
+     * @param deadline - string (data limita la care poate fi adusa tema: 1...14)
+     * @param dataPredare - string (data la care a fost data tema: 1...14)
+     */
     public Tema(String idTema, String descriere, String deadline,String dataPredare) {
         this.idTema = idTema;
         this.descriere = descriere;

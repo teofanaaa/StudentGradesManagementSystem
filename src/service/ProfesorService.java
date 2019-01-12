@@ -18,11 +18,21 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Clasa ProfesorService
+ */
 public class ProfesorService extends AbstractService<String, Profesor> {
     Repository<String, Student> repoS;
     Repository<Pair<String,String>, Nota> repoN;
     UtilizatorService servUser;
 
+    /**
+     * Constructorul clasei
+     * @param repoP - repository de profesori
+     * @param repoS - repository de studenti
+     * @param repoN - repository de note
+     * @param servUser - service de useri
+     */
     public ProfesorService(Repository<String, Profesor> repoP, Repository<String, Student> repoS,
                            Repository<Pair<String,String>, Nota> repoN,
                            UtilizatorService servUser) {
@@ -32,6 +42,12 @@ public class ProfesorService extends AbstractService<String, Profesor> {
         this.servUser = servUser;
     }
 
+    /**
+     * Adaugare profesor
+     * @param entity (entitatea de adaugat)
+     * @return entuty(nu sa putut adauga profesorul)/ null (profesor adaugat)
+     * @throws ValidationException (date invalide)
+     */
     @Override
     public Profesor add(Profesor entity) throws ValidationException {
         Profesor returned=entity;
@@ -53,6 +69,11 @@ public class ProfesorService extends AbstractService<String, Profesor> {
         return returned;
     }
 
+    /**
+     * Stergere profesor
+     * @param s - string (id profesor)
+     * @return null (nu s-a gasit id-ul)/ Profesor (profesorul sters)
+     */
     @Override
     public Profesor remove(String s) {
         String username=find(s).getEmail().split("@")[0];
@@ -65,6 +86,9 @@ public class ProfesorService extends AbstractService<String, Profesor> {
         return returned;
     }
 
+    /**
+     * Sterge toata lista de profesori
+     */
     @Override
     public void removeAll() {
         for(Profesor profesor:super.getAll()){
@@ -76,6 +100,12 @@ public class ProfesorService extends AbstractService<String, Profesor> {
         notifyObservers(new DataChanged(EventType.DELETE));
     }
 
+    /**
+     * Actualizare date profesor
+     * @param entity (entitatea de actualizat)
+     * @return entity(nu s-a putut actualiza)/ null (date actualizate)
+     * @throws ValidationException (date invalide)
+     */
     @Override
     public Profesor update(Profesor entity) throws ValidationException {
         try {
@@ -101,6 +131,11 @@ public class ProfesorService extends AbstractService<String, Profesor> {
         return entity;
     }
 
+    /**
+     * Lista de grupe a unui profesor
+     * @param id - string (id profesor)
+     * @return lista de grupe la care proda proful
+     */
     public List<String> getGrupeProf(String id){
         List<String> list = new ArrayList<>();
 
@@ -112,6 +147,11 @@ public class ProfesorService extends AbstractService<String, Profesor> {
         return list;
     }
 
+    /**
+     * Cautare profesor dupa nume utilizator
+     * @param username - string(nume utilizator)
+     * @return Profesor
+     */
     public Profesor findByUsername(String username){
         return getAll()
                 .stream()
@@ -120,6 +160,10 @@ public class ProfesorService extends AbstractService<String, Profesor> {
                 .get(0);
     }
 
+    /**
+     * Creare unei liste de forma [nume]:[id] (pentru combobox)
+     * @return lista de stringuri
+     */
     public List<String> listaNumeId(){
         return getAll()
                 .stream()
@@ -127,6 +171,10 @@ public class ProfesorService extends AbstractService<String, Profesor> {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Sterge studentii unui profesor
+     * @param idProf - string (id profesor)
+     */
     private void stergeStudenti(String idProf){
         for(Student student:repoS.findAll()){
             if(student.getIndrumatorLab().equals(idProf)) {

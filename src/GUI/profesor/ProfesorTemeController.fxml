@@ -53,14 +53,5 @@
       </JFXButton>
       <Pagination fx:id="pagination" layoutX="50.0" layoutY="305.0" prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="425.0" AnchorPane.topAnchor="305.0" />
       <JFXTextField fx:id="searchBar" layoutX="50.0" layoutY="71.0" onAction="#handleSearch" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" onKeyTyped="#handleSearch" promptText="Search" AnchorPane.bottomAnchor="270.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="80.0" />
-      <JFXButton fx:id="notaButton" layoutX="511.0" layoutY="78.0" onAction="#handleNoteaza" prefHeight="30.0" prefWidth="114.0" stylesheets="@../../resources/styleSheet.css" text="Noteaza">
-         <graphic>
-            <ImageView fitHeight="10.0" fitWidth="10.0" opacity="0.7">
-               <image>
-                  <Image url="@../../resources/add.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
    </children>
 </AnchorPane>

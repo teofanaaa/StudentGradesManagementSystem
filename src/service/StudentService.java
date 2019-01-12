@@ -21,11 +21,21 @@ import java.util.stream.StreamSupport;
 
 import static utils.Config.filterAndSorter;
 
+/**
+ * Clasa StudentService
+ */
 public class StudentService extends AbstractService<String, Student> {
     Repository<String, Tema> repoT;
     Repository<Pair<String,String>, Nota> repoN;
     UtilizatorService servUser;
 
+    /**
+     * Constructorul clasei
+     * @param repoS - repository de student
+     * @param repoT - repository de teme
+     * @param repoN - repository de note
+     * @param servUser - service de useri
+     */
     public StudentService(Repository<String, Student> repoS, Repository<String, Tema> repoT,
                           Repository<Pair<String, String>, Nota> repoN, UtilizatorService servUser) {
         super(repoS);
@@ -34,10 +44,21 @@ public class StudentService extends AbstractService<String, Student> {
         this.servUser=servUser;
     }
 
+    /**
+     * Testeaza daca exista username-ul
+     * @param username - string
+     * @return true/false
+     */
     private boolean existaUsername(String username){
         return servUser.find(username) != null;
     }
 
+    /**
+     * Adauga entitatea in repo
+     * @param entity (entitatea de adaugat)
+     * @return entity (nu s-a putut adauga)/null (entitatea a fost adaugata)
+     * @throws ValidationException (date invalide)
+     */
     @Override
     public Student add(Student entity) throws ValidationException {
         Student returned=entity;
@@ -63,19 +84,27 @@ public class StudentService extends AbstractService<String, Student> {
         return returned;
     }
 
+    /**
+     * Sterge un student
+     * @param s -string (id student)
+     * @return student (exista id-ul)/null (nu exista id-ul)
+     */
     @Override
     public Student remove(String s) {
         String username=find(s).getEmail().split("@")[0];
-        servUser.remove(username);
         notifyObservers(new DataChanged(EventType.DELETE));
+        stergeNote(s);
         Student returned= super.remove(s);
         if(returned!=null){
-            stergeNote(s);
+            servUser.remove(username);
             notifyObservers(new DataChanged(EventType.DELETE));
         }
         return returned;
     }
 
+    /**
+     * Sterge toti studentii
+     */
     @Override
     public void removeAll() {
         for(Student student:super.getAll()){
@@ -87,6 +116,12 @@ public class StudentService extends AbstractService<String, Student> {
         notifyObservers(new DataChanged(EventType.DELETE));
     }
 
+    /**
+     * Actualizaza datele unui student
+     * @param entity (entitatea de actualizat)
+     * @return Student daca nu s-a putut actualiza / null (s-au actualizat datele)
+     * @throws ValidationException (date invalide)
+     */
     @Override
     public Student update(Student entity) throws ValidationException {
         try{
@@ -115,14 +150,30 @@ public class StudentService extends AbstractService<String, Student> {
         return entity;
     }
 
+    /**
+     * Filtare studenti dupa id profesor
+     * @param profesor - string (id profesor)
+     * @return lista de studenti
+     */
     public List<Student> filtreazaStudentiProf(String profesor) {
         return filterAndSorter(getAll(), entity -> entity.getIndrumatorLab().contains(profesor), null);
     }
 
+    /**
+     * Filtrare studenti dupa grupa
+     * @param grupa - string
+     * @return - lista de studenti
+     */
     public List<Student> filtreazaStudentiGrupa(String grupa) {
         return filterAndSorter(getAll(), entity -> entity.getGrupa().equals(grupa), Comparator.comparing(Student::getNume));
     }
 
+    /**
+     * Filtare studentii unui profesor dupa keyword
+     * @param idProfesor - string
+     * @param keyword -string
+     * @return lista de studenti
+     */
     public List<Student> filtreazaStudentiProfKeyword(String idProfesor,String keyword){
         return filtreazaStudentiKeyword(keyword)
                 .stream()
@@ -130,6 +181,11 @@ public class StudentService extends AbstractService<String, Student> {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Filtreaza toti studentii dupa keyword
+     * @param keyword - string
+     * @return lista de studenti
+     */
     public List<Student> filtreazaStudentiKeyword(String keyword) {
         return filterAndSorter(getAll(),
                 entity -> entity.getID().contains(keyword.toLowerCase()) ||
@@ -141,6 +197,10 @@ public class StudentService extends AbstractService<String, Student> {
                 Comparator.comparing(Student::getNume));
     }
 
+    /**
+     * Lista de grupe
+     * @return lista de stringuri
+     */
     public List<String> getGrupe(){
         List<String> list = new ArrayList<>();
         getAll().forEach(student -> {
@@ -151,12 +211,21 @@ public class StudentService extends AbstractService<String, Student> {
         return list;
     }
 
+    /**
+     * Lista de email-uri studenti
+     * @return lista de stringuri
+     */
     public List<String> listaEmailuri(){
         return getAll().stream()
                 .map(Student::getEmail)
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Cautare student dupa username
+     * @param username - string
+     * @return student
+     */
     public Student findByUsername(String username){
         return getAll()
                 .stream()
@@ -165,6 +234,10 @@ public class StudentService extends AbstractService<String, Student> {
                 .get(0);
     }
 
+    /**
+     * Sterge notele unui student
+     * @param idStundet - string (id student)
+     */
     private void stergeNote(String idStundet){
         for(Tema tema:repoT.findAll()){
             Pair<String, String> id=new Pair(idStundet,tema.getID());

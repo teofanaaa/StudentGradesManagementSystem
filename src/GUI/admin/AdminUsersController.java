@@ -1,5 +1,6 @@
 package GUI.admin;
 
+import com.jfoenix.controls.JFXTextField;
 import domain.Utilizator;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.value.ChangeListener;
@@ -23,6 +24,8 @@ public class AdminUsersController implements Observer<DataChanged> {
     private int itemsPerPage = 7;
     private int currentPageIndex ;
     private UtilizatorService service;
+    @FXML
+    JFXTextField searchBar;
 
     @FXML
     TableView<Utilizator> tableView;
@@ -77,6 +80,15 @@ public class AdminUsersController implements Observer<DataChanged> {
     @Override
     public void update(DataChanged dataChanged) {
         model.setAll(this.service.getAll());
+        setLastPage();
+        tableView.getItems().setAll(model.subList(currentPageIndex * itemsPerPage,
+                ((currentPageIndex * itemsPerPage + itemsPerPage <= model.size()) ? currentPageIndex * itemsPerPage
+                        + itemsPerPage : model.size())));
+    }
+
+    @FXML
+    public void handleSearch(){
+        model.setAll(this.service.filtreazaUseriKeyword(this.searchBar.getText()));
         setLastPage();
         tableView.getItems().setAll(model.subList(currentPageIndex * itemsPerPage,
                 ((currentPageIndex * itemsPerPage + itemsPerPage <= model.size()) ? currentPageIndex * itemsPerPage

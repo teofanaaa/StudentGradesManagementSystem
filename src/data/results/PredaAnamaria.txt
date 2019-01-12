@@ -1,0 +1,9 @@
+Situatia studentului Preda Anamaria la disciplina MAP
+
+> S-a adaugat o nota noua!
+Tema: 1
+Nota: 10
+Predata in saptamana: 1
+Deadline: 2
+Feedback: Nu s-au aplicat penalizari. 
+

@@ -2,11 +2,20 @@ package domain;
 
 import java.util.Objects;
 
+/**
+ * Clasa Profesor
+ */
 public class Profesor implements HasID<String>{
     private String id;
     private String nume;
     private String email;
 
+    /**
+     * Constructorul clasei
+     * @param id - string (id prosefor)
+     * @param nume - string (numele profesorului)
+     * @param email - string (email profesor)
+     */
     public Profesor(String id, String nume, String email) {
         this.id = id;
         this.nume = nume;

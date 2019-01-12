@@ -48,8 +48,8 @@ public class ProfesorTemeController implements Observer<DataChanged> {
     JFXButton editButton;
     @FXML
     JFXButton deleteButton;
-    @FXML
-    JFXButton notaButton;
+//    @FXML
+//    JFXButton notaButton;
     @FXML
     AnchorPane mainPane;
     @FXML
@@ -91,7 +91,7 @@ public class ProfesorTemeController implements Observer<DataChanged> {
     public void initialize() {
         deleteButton.setDisable(true);
         editButton.setDisable(true);
-        notaButton.setDisable(true);
+       // notaButton.setDisable(true);
         ColumnId.setCellValueFactory(cellData -> {
             Tema current_item = cellData.getValue();
             return new ReadOnlyStringWrapper(current_item.getID());
@@ -114,7 +114,7 @@ public class ProfesorTemeController implements Observer<DataChanged> {
     public void handlePane(){
         deleteButton.setDisable(true);
         editButton.setDisable(true);
-        notaButton.setDisable(true);
+        //notaButton.setDisable(true);
         tableView.getSelectionModel().clearSelection();
     }
 
@@ -130,13 +130,17 @@ public class ProfesorTemeController implements Observer<DataChanged> {
         tableView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection == null) {
                 deleteButton.setDisable(true);
+
+                //notaButton.setDisable(true);
                 editButton.setDisable(true);
-                notaButton.setDisable(true);
             }
-            else{
-                deleteButton.setDisable(false);
+            else
+                {
+
                 editButton.setDisable(false);
-                notaButton.setDisable(false);
+                //notaButton.setDisable(false)
+                //;
+                deleteButton.setDisable(false);
             }
         });
     }
@@ -172,7 +176,7 @@ public class ProfesorTemeController implements Observer<DataChanged> {
                         GUIUtils.textFieldDescriereTema.getText(), GUIUtils.comboBoxDeadlineTema.getValue(),
                         GUIUtils.comboBoxPredareTema.getValue())
         );
-        GUIUtils.setDialouge(mainPane,"Adaugare student", add,body);
+        GUIUtils.setDialouge(mainPane,"Adaugare tema", add,body);
     }
 
     @FXML

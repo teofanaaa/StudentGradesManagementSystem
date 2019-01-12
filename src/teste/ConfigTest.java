@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ConfigTest {
 
-    @Test
-    void sendMailTest() {
-        Config.sendMail("teofanaenachioiu@yahoo.com","Test from Java app","Am reusit!");
-    }
+//    @Test
+//    //void sendMailTest() {
+//        Config.sendMail("teofanaenachioiu@yahoo.com","Test from Java app","Am reusit!");
+//    }
 
     @Test
     void currentWeekUniTest(){

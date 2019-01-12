@@ -24,12 +24,6 @@ import java.util.List;
 
 public class GUIUtils {
 
-    private static Image closeImg = new Image(new File(".imagini/close.png").toURI().toString());
-    private static Image confirmationImg = new Image(new File(".imagini/confirmation.png").toURI().toString());
-    private static Image errorImg = new Image(new File(".imagini/error.png").toURI().toString());
-    private static Image informationImg = new Image(new File(".imagini/information.png").toURI().toString());
-    private static Image warnningImg = new Image(new File(".imagini/warnning.png").toURI().toString());
-
     //Field profesor
     public static JFXTextField textFieldIdProf = new JFXTextField();
     public static JFXTextField textFieldNumeProf = new JFXTextField();
@@ -56,20 +50,27 @@ public class GUIUtils {
     public static JFXTextField textAreaFeedbackNota=new JFXTextField();
     public static JFXCheckBox checkBoxMotivatNota=new JFXCheckBox();
 
+    /**
+     * Fereastra de eroare
+     * @param text - string (textul erorii)
+     */
     public static void showErrorMessage(String text) {
         Alert message = new Alert(Alert.AlertType.ERROR);
         message.setTitle("Eroare");
         message.setContentText(text);
+        message.getDialogPane().setStyle("" +
+                "-fx-font-family: \"Trebuchet MS\", Helvetica, sans-serif;\n" +
+                "-fx-text-fill: white;\n" +
+                "-fx-background-color: rgba(172,20,39,0.5);"+
+                "");
         message.showAndWait();
+
     }
 
-    public static void showMessage(Alert.AlertType type, String header, String text) {
-        Alert message = new Alert(type);
-        message.setHeaderText(header);
-        message.setContentText(text);
-        message.showAndWait();
-    }
-
+    /**
+     * Fereastra de adaugare profesor
+     * @return gridPane (fereastra)
+     */
     public static Node addProfesorContent(){
         Label text1 = new Label("Nr. leg.");
         Label text2 = new Label("Nume");
@@ -96,6 +97,10 @@ public class GUIUtils {
         return gridPane;
     }
 
+    /**
+     * Fereastra de modificare date profesor
+     * @return gridPane (fereastra)
+     */
     public static Node editProfesorContent(Profesor profesor){
         Label text1 = new Label("Nr. leg.");
         Label text2 = new Label("Nume");
@@ -123,8 +128,12 @@ public class GUIUtils {
         return gridPane;
     }
 
+    /**
+     * Fereastra de adaugare student
+     * @return gridPane (fereastra)
+     */
     public static Node editStudentContent(Student student){
-        Label text1 = new Label("Nr. leg.");
+        Label text1 = new Label("Nr. matr.");
         Label text2 = new Label("Nume");
         Label text3=new Label("Prenume");
         Label text4=new Label("Grupa");
@@ -161,8 +170,12 @@ public class GUIUtils {
         return gridPane;
     }
 
+    /**
+     * Fereastra de editare date tema
+     * @return gridPane (fereastra)
+     */
     public static Node editTemaContent(Tema tema){
-        Label text1 = new Label("Nr. crt.");
+        Label text1 = new Label("Nr. lab.");
         Label text2 = new Label("Descriere");
         Label text3=new Label("Deadline");
         Label text4=new Label("Predare");
@@ -191,8 +204,12 @@ public class GUIUtils {
         return gridPane;
     }
 
+    /**
+     * Fereastra de adaugare tema
+     * @return gridPane (fereastra)
+     */
     public static Node addTemeContent(){
-        Label text1 = new Label("Nr. crt.");
+        Label text1 = new Label("Nr. lab.");
         Label text2 = new Label("Descriere");
         Label text3=new Label("Deadline");
         Label text4=new Label("Predare");
@@ -220,6 +237,10 @@ public class GUIUtils {
         return gridPane;
     }
 
+    /**
+     * Fereastra de adaugare nota
+     * @return gridPane (fereastra)
+     */
     public static Node addNotaContent(){
         Label text1 = new Label("Nr. matr.");
         Label text2 = new Label("Nr. tema");
@@ -253,8 +274,12 @@ public class GUIUtils {
         return gridPane;
     }
 
+    /**
+     * Fereastra de adaugare student
+     * @return gridPane (fereastra)
+     */
     public static Node addStudentContent(){
-        Label text1 = new Label("Nr. leg.");
+        Label text1 = new Label("Nr. matr.");
         Label text2 = new Label("Nume");
         Label text3=new Label("Prenume");
         Label text4=new Label("Grupa");
@@ -291,6 +316,13 @@ public class GUIUtils {
         return gridPane;
     }
 
+    /**
+     * Configurare fereastra de dialog
+     * @param mainPane - AnchorPane (fereastra radacina)
+     * @param header - string (titlul ferestrei de dialog)
+     * @param eventAction - eventhandler (actiune care se executa a apasarea butonului "Confirmare")
+     * @param body - Node (componenetele ferestrei de dialog)
+     */
     public static void setDialouge(AnchorPane mainPane, String header, EventHandler eventAction, Node body) {
         JFXDialogLayout content = new JFXDialogLayout();
         Label head=new Label(header);
