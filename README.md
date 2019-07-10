@@ -21,10 +21,12 @@ This system is built with Java and JavaFx. For its development I used:
   
 <h1>Usege</h1>
 Three types of users can log in to the system:
-- admin
-- teacher
-- student
-A user logs into the system based on their username and password.
+<ul>
+ <li>admin</li>
+ <li>teacher</li>
+ <li>student</li>
+ </ul>
+A user logs into the system with username and password.
 
 ![Screenshot](https://github.com/teofanaenachioiu/StudentGradesManagementSystem/blob/master/screenshots/login.PNG)
 
@@ -39,13 +41,13 @@ Add, delete or edit information about a teacher
 
 ![Screenshot](https://github.com/teofanaenachioiu/StudentGradesManagementSystem/blob/master/screenshots/add.PNG)
 
-See all the accounts (An account is created automatically when a student or a teacher is added)
+View all the accounts (An account is created automatically when a student or a teacher is added)
 
 ![Screenshot](https://github.com/teofanaenachioiu/StudentGradesManagementSystem/blob/master/screenshots/users.PNG)
 
 The main purpose of the system is to give grades to students. This task can be accomplished by user logged as teacher.
 
-![Screenshot](https://github.com/teofanaenachioiu/StudentGradesManagementSystem/blob/master/screenshots/grades.PNG)
+![Screenshot](https://github.com/teofanaenachioiu/StudentGradesManagementSystem/blob/master/screenshots/grade.PNG)
 
 A teacher can also do the following:
 <br>
@@ -63,17 +65,19 @@ Generate reports
 
 
 <h1>Libraries</h1>
-* activation.jar 
-* mail.jar
-* derby.jar
-* derbyclient.jar
-* derbyrun.jar
-* derbytools.jar
-* itextpdf-5.5.8
-* jfoenix-8.0.8
-* controlsfx-8.0.1
+<ul>
+ <li>activation.jar</li> 
+ <li>mail.jar</li>
+ <li>derby.jar</li>
+ <li>derbyclient.jar</li>
+ <li>derbyrun.jar</li>
+ <li>derbytools.jar</li>
+ <li>itextpdf-5.5.8</li>
+ <li>jfoenix-8.0.8</li>
+ <li>controlsfx-8.0.1</li>
+</ul>
 
-<h1>Useful links</h1>
+Useful links
 * https://db.apache.org/derby/integrate/plugin_help/derby_app.html
 * http://faculty.sdmiramar.edu/jcouture/2014sp/cisc190/webct/manual/tutorial-derby-intellij.asp
 * https://www.tutorialspoint.com/java/java_sending_email.htm
