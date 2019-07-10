@@ -24,10 +24,14 @@ Three types of users can log in to the system:
 - student
 For this application, there is only one administrator. He can do the following:
 Add, delete or edit information about a student
+
 ![Screenshot](https://github.com/teofanaenachioiu/StudentGradesManagementSystem/blob/master/screenshots/edit.PNG)
+
 Add, delete or edit information about a teacher
 See all the accounts (An account is created automatically when a student or a teacher is added)
+
 ![Screenshot](https://github.com/teofanaenachioiu/StudentGradesManagementSystem/blob/master/screenshots/users.PNG)
+
 Libraries:
 * activation.jar 
 * mail.jar
